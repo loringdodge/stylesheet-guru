@@ -1,0 +1,36 @@
+{
+  "name": "stylesheet.guru",
+  "version": "1.0.0",
+  "description": "stylesheet.guru website",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "4.10.1",
+    "htmlescape": "1.0.0",
+    "morgan": "1.4.1",
+    "route-builder": "0.0.1",
+    "underscore": "1.7.0"
+  },
+  "devDependencies": {
+    "browserify": "6.2.0",
+    "envify": "3.0.0",
+    "react": "0.12.0",
+    "reactify": "0.15.2",
+    "source-map-support": "0.2.8"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "envify"
+      ],
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  }
+}
