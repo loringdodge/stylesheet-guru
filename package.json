@@ -1,10 +1,11 @@
 {
   "name": "stylesheet.guru",
-  "version": "1.0.0",
-  "description": "stylesheet.guru website",
   "version": "0.0.0",
+  "description": "stylesheet.guru website",
   "dependencies": {
     "express": "4.10.1",
+    "gulp": "^3.8.11",
+    "gulp-stylus": "^2.0.1",
     "htmlescape": "1.0.0",
     "morgan": "1.4.1",
     "route-builder": "0.0.1",
