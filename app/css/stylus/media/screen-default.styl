@@ -3,7 +3,7 @@ html, body
 	width 100%
 	
 body
-	background-color #F4F4F4
+	background-color grey-background
 	font-family roboto
 	
 pre 
@@ -14,19 +14,23 @@ pre
 	word-wrap break-word
 	
 header
-	display block
+	min-width 100%
+	height 40px
+	
+	.header-logo
+		line-height 40px
 	
 aside#about
 	display block
 	
 main
-	display block
+	position relative
 	
-
 // ********** PLAYER **********
 
 section#player
-	display block
+	width 100%
+	min-height calc(100% - 40px)
 	
 	.player-instance
 		display block
@@ -69,7 +73,9 @@ section#player
 // ********** SEARCH RESULTS **********
 
 section#search
-	display block
+	padding-bottom 20px
+	width 100%
+	overflow hidden
 	
 		// SEARCH BOX
 			

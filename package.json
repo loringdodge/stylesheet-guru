@@ -8,6 +8,7 @@
     "gulp-stylus": "^2.0.1",
     "htmlescape": "1.0.0",
     "morgan": "1.4.1",
+    "rethinkdb": "^1.16.2",
     "route-builder": "0.0.1",
     "underscore": "1.7.0"
   },
