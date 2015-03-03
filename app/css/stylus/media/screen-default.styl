@@ -18,6 +18,7 @@ header
 	height 40px
 	
 	.header-logo
+		margin 0
 		line-height 40px
 	
 aside#about
@@ -38,13 +39,20 @@ section#player
 
 		// HEADER
 		.player-header
-			display block
+			position relative
+			float left
+			width 100%
+			height 40px
 			
 			.player-header-title
-				display block
+				float left
+				margin 0 10px 0 15px
+				line-height 40px
 				
 			.player-header-desc
-				display block
+				float left
+				margin 0
+				line-height 40px
 		
 		// MENU / PLAYER BUTTONS
 		.player-menu
@@ -105,8 +113,7 @@ section#search
 		.search-result-box
 			float left
 			margin 20px 0px 0px 20px
-			max-width 20%
-			height 200px
+			width 250px
 			overflow hidden
 			
 			&:hover
@@ -116,7 +123,7 @@ section#search
 				background-color #333
 				color white
 				
-			&:hover .search-result-box-overlay-desc
+			&:hover h4
 				color #CCC
 			
 			.search-result-box-img
@@ -125,16 +132,13 @@ section#search
 				
 			.search-result-box-overlay
 				float left
-				padding 15px 0 0 15px
+				padding 20px 15px
 				width 100%
 				height 70px
 				box-sizing border-box
 				
-				.search-result-box-overlay-title
-					display block
-		
-				.search-result-box-overlay-desc
-					display block
+				h4
+					padding-top 4px
 
 	
 
