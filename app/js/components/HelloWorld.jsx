@@ -1,6 +1,8 @@
 var React = require('react');
 
 var Header = require('./Header.jsx');
+var Player = require('./Player.jsx');
+var SearchResults = require('./Search-results.jsx');
 
 var AppConstants = require('../constants/AppConstants');
 var Navigate = require('./Navigate');
@@ -17,8 +19,11 @@ var HelloWorld = React.createClass({
     return (
       <div>
         <Header />
-        <h1>Hello World!</h1>
-        <Navigate page={Pages.HOME}>Go to "home"</Navigate>
+        <Player>
+          // <h1>Hello World!</h1>
+          // <Navigate page={Pages.HOME}>Go to "home"</Navigate>
+        </Player>
+        <SearchResults />
       </div>
     );
   }

@@ -30,7 +30,8 @@ main
 
 section#player
 	width 100%
-	min-height calc(100% - 40px)
+	height 500px
+	// min-height calc(100% - 40px)
 	
 	.player-instance
 		display block
@@ -73,40 +74,67 @@ section#player
 // ********** SEARCH RESULTS **********
 
 section#search
+	position relative
 	padding-bottom 20px
 	width 100%
 	overflow hidden
 	
-		// SEARCH BOX
+	// SEARCH BOX
+		
+	.search-box
+		float left
+		padding 0 30px
+		width 100%
+		height 80px
+		box-sizing: border-box;
 			
-		.search-box
-			display block
+		.search-box-input
+			margin-top 15px
+			padding 0 10px
+			height 60%
+			width 95%	
+			border none
 			
-			.search-box-label
-				display block
-				
-			.search-box-input
-				display block
-				
-		// SEARCH RESULTS
-				
-		.search-results-container
-			display block
+	// SEARCH RESULTS
 			
-			.search-result-box
-				display block
+	.search-results-container
+		float left
+		width 100%
+		height 500px
+		
+		.search-result-box
+			float left
+			margin 20px 0px 0px 20px
+			max-width 20%
+			height 200px
+			overflow hidden
+			
+			&:hover
+				cursor pointer
+			
+			&:hover .search-result-box-overlay
+				background-color #333
+				color white
 				
-				.search-result-box-img
+			&:hover .search-result-box-overlay-desc
+				color #CCC
+			
+			.search-result-box-img
+				float left
+				max-width 250px
+				
+			.search-result-box-overlay
+				float left
+				padding 15px 0 0 15px
+				width 100%
+				height 70px
+				box-sizing border-box
+				
+				.search-result-box-overlay-title
 					display block
-					
-				.search-result-box-overlay
+		
+				.search-result-box-overlay-desc
 					display block
-					
-					.search-result-box-overlay-title
-						display block
-			
-					.search-result-box-overlay-desc
-						display block
 
 	
 
