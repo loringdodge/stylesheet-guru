@@ -11,7 +11,7 @@ var SearchResults = React.createClass({
 				</div>	
 				<div className="search-results-container background-color-red border-top-red">
 					<div className="search-result-box background-color-white border-radius-5px">
-						<img className="search-result-box-img" src="img/cover/1.png"/>
+						<img className="search-result-box-img" src="../img/cover/1.png"/>
 						<div className="search-result-box-overlay background-color-grey-light">
 							<h3>Circle using animations</h3>
 							<h4>Keyframes</h4>

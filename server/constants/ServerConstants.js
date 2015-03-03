@@ -12,7 +12,7 @@ module.exports = {
   },
 
   LayoutConfig: {
-    title: 'hello-world demo',
+    title: 'styelsheet.guru',
     favicon: 'about:blank',
     stylesheet: '/main.css',
     script: '/main.js',

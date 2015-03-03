@@ -373,7 +373,7 @@ section#search .search-results-container .search-result-box .search-result-box-i
 section#search .search-results-container .search-result-box .search-result-box-overlay {
   float: left;
   padding: 15px 0 0 15px;
-  width: 250px;
+  width: 100%;
   height: 70px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
