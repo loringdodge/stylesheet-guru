@@ -19,6 +19,10 @@ module.exports = {
     NOT_FOUND: null
   }),
 
+  SearchResponse: keyMirror({
+    RECEIVE_DATA: null
+  }),
+
   LayoutConfig: {
     // Keep in sync with `server/constants/ServerConstants.js`
     ROOT_ELEMENT_ID: 'ReactRootElement'

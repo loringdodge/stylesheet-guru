@@ -20,6 +20,7 @@
     "source-map-support": "0.2.8"
   },
   "scripts": {
+    "test": "jest",
     "build-css": "mkdir -p public && cat app/css/*.css > public/main.css",
     "build-js": "mkdir -p public && browserify app/js/main.js --standalone Application --debug --outfile public/main.js",
     "build": "npm run build-js && npm run build-css",

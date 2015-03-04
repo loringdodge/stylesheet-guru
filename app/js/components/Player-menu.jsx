@@ -5,10 +5,10 @@ var PlayerMenu = React.createClass({
 	render: function() {
 		return (
 			<div className="player-menu">
-				<div className="player-menu-btn play">PLAY</div>
-				<div className="player-menu-btn pause">PAUSE</div>
-				<div className="player-menu-btn next">NEXT</div>
-				<div className="player-menu-btn back">BACK</div>
+				<div className="btn background-color-green">PLAY</div>
+				<div className="btn background-color-red">PAUSE</div>
+				<div className="btn background-color-blue">NEXT</div>
+				<div className="btn background-color-orange">BACK</div>
 			</div>
 		);
 	}
