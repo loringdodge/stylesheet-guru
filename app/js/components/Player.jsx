@@ -1,18 +1,17 @@
 var React = require('react');
 
 var PlayerHeader = require('./Player-header.jsx');
-var PlayerTabs = require('./Player-tabs.jsx');
+var PlayerTabsCode = require('./Player-tabs-code.jsx');
+var PlayerTabsDemo = require('./Player-tabs-demo.jsx');
 
 var Player = React.createClass({
 
 	render: function() {
 		return (
 			<section id="player">
-				<div className="player-instance">
-					<PlayerHeader />
-					<PlayerTabs />
-					<PlayerTabs />
-				</div>
+				<PlayerHeader />
+				<PlayerTabsCode />
+				<PlayerTabsDemo />
 			</section>
 		);
 	}

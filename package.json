@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "description": "stylesheet.guru website",
   "dependencies": {
+    "assert": "^1.3.0",
+    "debug": "^2.1.2",
     "express": "4.10.1",
     "gulp": "^3.8.11",
     "gulp-stylus": "^2.0.1",

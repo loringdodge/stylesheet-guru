@@ -1,12 +1,12 @@
 var React = require('react');
 
-var PlayerTabs = React.createClass({
+var PlayerTabsCode = React.createClass({
 
 	render: function() {
 		return (
-			<div className="player-tabs">
+			<div className="player-tabs code">
 				<ul className="player-tabs-nav background-color-grey-back">
-					<li>CSS</li>
+					<li className="selected">CSS</li>
 					<li>HTML</li>
 				</ul>
 				<div className="player-tabs-window background-color-white">
@@ -19,4 +19,4 @@ var PlayerTabs = React.createClass({
 
 });
 
-module.exports = PlayerTabs;
+module.exports = PlayerTabsCode;

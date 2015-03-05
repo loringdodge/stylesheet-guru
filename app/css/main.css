@@ -321,8 +321,8 @@ h4 {
 }
 html,
 body {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 body {
   background-color: #f4f4f4;
@@ -348,51 +348,53 @@ aside#about {
 }
 main {
   position: relative;
+  height: 100%;
 }
 section#player {
   width: 100%;
-  height: 500px;
+  height: 600px;
 }
-section#player .player-instance {
-  width: 100%;
-  height: 100%;
-}
-section#player .player-instance .player-header {
+section#player .player-header {
   position: relative;
   float: left;
   width: 100%;
   height: 40px;
 }
-section#player .player-instance .player-header .player-header-title {
+section#player .player-header .player-header-title {
   float: left;
   margin: 0 10px 0 15px;
   line-height: 40px;
 }
-section#player .player-instance .player-header .player-header-desc {
+section#player .player-header .player-header-desc {
   float: left;
   margin: 0;
   line-height: 40px;
 }
-section#player .player-instance .player-menu {
+section#player .player-menu {
   float: right;
   width: 25%;
   height: 40px;
 }
-section#player .player-instance .player-menu .btn {
+section#player .player-menu .btn {
   float: left;
 }
-section#player .player-instance .player-tabs {
+section#player .player-tabs {
   float: left;
-  width: calc(25%);
   height: 100%;
 }
-section#player .player-instance .player-tabs .player-tabs-nav {
+section#player .player-tabs.code {
+  width: calc(25%);
+}
+section#player .player-tabs.demo {
+  width: calc(75%);
+}
+section#player .player-tabs .player-tabs-nav {
   float: left;
   width: 100%;
   height: 30px;
   border-bottom: 1px solid #e6e6e6;
 }
-section#player .player-instance .player-tabs .player-tabs-nav li {
+section#player .player-tabs .player-tabs-nav li {
   float: left;
   margin-right: 2px;
   padding: 0px 20px;
@@ -403,11 +405,11 @@ section#player .player-instance .player-tabs .player-tabs-nav li {
   cursor: pointer;
   display: inline-block;
 }
-section#player .player-instance .player-tabs .player-tabs-nav li:hover {
+section#player .player-tabs .player-tabs-nav li:hover {
   color: #333;
   background-color: #ffd464;
 }
-section#player .player-instance .player-tabs .player-tabs-nav li.selected {
+section#player .player-tabs .player-tabs-nav li.selected {
   height: 31px;
   color: #333;
   font-weight: 700;
@@ -416,7 +418,7 @@ section#player .player-instance .player-tabs .player-tabs-nav li.selected {
   border-right: 1px solid #e6e6e6;
   cursor: auto;
 }
-section#player .player-instance .player-tabs .player-tabs-window {
+section#player .player-tabs .player-tabs-window {
   position: relative;
   float: left;
   width: 100%;
@@ -427,7 +429,7 @@ section#player .player-instance .player-tabs .player-tabs-window {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div {
+section#player .player-tabs .player-tabs-window .div {
   position: absolute;
   top: 0;
   left: 0;
@@ -438,21 +440,21 @@ section#player .player-instance .player-tabs .player-tabs-window .div {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div form {
+section#player .player-tabs .player-tabs-window .div form {
   width: 100%;
   height: 100%;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div form textarea {
+section#player .player-tabs .player-tabs-window .div form textarea {
   width: 100%;
   height: 100%;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div .highlight {
+section#player .player-tabs .player-tabs-window .div .highlight {
   margin-top: 0;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div .highlight code {
+section#player .player-tabs .player-tabs-window .div .highlight code {
   height: 100%;
 }
-section#player .player-instance .player-tabs .player-tabs-window .div .absolute-center {
+section#player .player-tabs .player-tabs-window .div .absolute-center {
   position: absolute;
   top: calc(50% - 30px);
   left: 50%;
@@ -486,12 +488,12 @@ section#search .search-box .search-box-input {
 }
 section#search .search-results-container {
   float: left;
+  padding: 20px;
   width: 100%;
-  height: 500px;
 }
 section#search .search-results-container .search-result-box {
   float: left;
-  margin: 20px 0px 0px 20px;
+  margin: 0px 20px 20px 0px;
   width: 250px;
   overflow: hidden;
 }

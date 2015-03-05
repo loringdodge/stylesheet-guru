@@ -1,6 +1,6 @@
 html, body
-	height 100%
 	width 100%
+	height 100%
 	
 body
 	background-color grey-background
@@ -26,114 +26,115 @@ aside#about
 	
 main
 	position relative
+	height 100%
 	
 // ********** PLAYER **********
 
 section#player
 	width 100%
-	height 500px
-	// min-height calc(100% - 40px)
-	
-	.player-instance
-		width 100%
-		height 100%
+	height 600px
 
-		// HEADER
-		.player-header
+	// HEADER
+	.player-header
+		position relative
+		float left
+		width 100%
+		height 40px
+		
+		.player-header-title
+			float left
+			margin 0 10px 0 15px
+			line-height 40px
+			
+		.player-header-desc
+			float left
+			margin 0
+			line-height 40px
+	
+	// MENU / PLAYER BUTTONS
+	.player-menu
+		float right
+		width 25%
+		height 40px
+		
+		.btn
+			float left
+			
+	.player-tabs
+		float left
+		height 100%
+		
+		&.code
+			width calc(25%)
+			
+		&.demo
+			width calc(75%)
+
+		.player-tabs-nav
+			float left
+			width 100%
+			height 30px
+			border-bottom 1px solid #E6E6E6
+			
+			li
+				float left
+				margin-right 2px
+				padding 0px 20px
+				height 30px
+				font-size 12px
+				line-height 30px
+				text-align center
+				cursor pointer
+				display inline-block
+				
+				&:hover
+					color #333
+					background-color #FFD464
+					
+				&.selected
+					height 31px
+					color #333
+					font-weight 700
+					background-color white
+					border-left 1px solid #E6E6E6
+					border-right 1px solid #E6E6E6
+					cursor auto
+					
+		.player-tabs-window
 			position relative
 			float left
 			width 100%
-			height 40px
+			height calc(100% - 30px)
+			border-right 1px solid #E6E6E6
+			box-sizing border-box
 			
-			.player-header-title
-				float left
-				margin 0 10px 0 15px
-				line-height 40px
-				
-			.player-header-desc
-				float left
-				margin 0
-				line-height 40px
-		
-		// MENU / PLAYER BUTTONS
-		.player-menu
-			float right
-			width 25%
-			height 40px
-			
-			.btn
-				float left
-				
-		.player-tabs
-			float left
-			width calc(25%)
-			height 100%
-
-			.player-tabs-nav
-				float left
+			.div
+				position absolute
+				top 0
+				left 0
 				width 100%
-				height 30px
-				border-bottom 1px solid #E6E6E6
-				
-				li
-					float left
-					margin-right 2px
-					padding 0px 20px
-					height 30px
-					font-size 12px
-					line-height 30px
-					text-align center
-					cursor pointer
-					display inline-block
-					
-					&:hover
-						color #333
-						background-color #FFD464
-						
-					&.selected
-						height 31px
-						color #333
-						font-weight 700
-						background-color white
-						border-left 1px solid #E6E6E6
-						border-right 1px solid #E6E6E6
-						cursor auto
-						
-			.player-tabs-window
-				position relative
-				float left
-				width 100%
-				height calc(100% - 30px)
-				border-right 1px solid #E6E6E6
+				height 100%
 				box-sizing border-box
 				
-				.div
-					position absolute
-					top 0
-					left 0
+				form
 					width 100%
 					height 100%
-					box-sizing border-box
 					
-					form
+					textarea
 						width 100%
 						height 100%
 						
-						textarea
-							width 100%
-							height 100%
-							
-					.highlight
-						margin-top 0
-						
-					.highlight code
-						height 100%
+				.highlight
+					margin-top 0
 					
-					.absolute-center
-						position absolute
-						top calc(50% - 30px)
-						left 50%
-						transform translate(-50%, -50%)
+				.highlight code
+					height 100%
+				
+				.absolute-center
+					position absolute
+					top calc(50% - 30px)
+					left 50%
+					transform translate(-50%, -50%)
 	
 // ********** SEARCH RESULTS **********
 
@@ -163,12 +164,12 @@ section#search
 			
 	.search-results-container
 		float left
+		padding 20px
 		width 100%
-		height 500px
 		
 		.search-result-box
 			float left
-			margin 20px 0px 0px 20px
+			margin 0px 20px 20px 0px
 			width 250px
 			overflow hidden
 			

@@ -3,6 +3,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var RouteUtils = require('../utils/RouteUtils');
 
 var ActionTypes = AppConstants.ActionTypes;
+var SearchResponse = AppConstants.SearchResponse;
 
 var AppActions = {
 
@@ -41,7 +42,16 @@ var AppActions = {
       path: path
     };
     AppDispatcher.handleViewAction(action);
+  },
+
+  receiveData: function(data) {
+    var action = {
+      actionType: SearchResponse.RECEIVE_DATA,
+      data: data
+    }
+    AppDispatcher.handleViewAction(action);
   }
+
 };
 
 module.exports = AppActions;

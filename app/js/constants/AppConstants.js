@@ -16,6 +16,7 @@ module.exports = {
   Pages: keyMirror({
     HOME: null,
     HELLO_WORLD: null,
+    DEMO: null,
     NOT_FOUND: null
   }),
 

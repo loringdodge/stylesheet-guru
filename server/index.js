@@ -8,6 +8,7 @@ var express = require('express');
 var fs = require('fs');
 var htmlescape = require('htmlescape');
 var morgan = require('morgan');
+var r = require('./db/index');
 
 var ServerConstants = require('./constants/ServerConstants');
 
