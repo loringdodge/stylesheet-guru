@@ -10,8 +10,11 @@ var PlayerTabsDemo = React.createClass({
 					<li>In Progress</li>
 				</ul>
 				<div className="player-tabs-window background-color-white">
-					<div></div>
-					<div></div>
+					<div className="player-tabs-window-container"></div>
+					<div className="player-tabs-window-container">
+
+
+					</div>
 				</div>
 			</div>
 		)

@@ -319,6 +319,30 @@ h4 {
   width: 100%;
   -webkit-transition: width 0.3s;
 }
+.code-block {
+  display: none;
+}
+.code-block .code-block-row {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-number {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-line {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-line .selector {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-line .property {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-line .value {
+  display: none;
+}
+.code-block .code-block-row .code-block-row-line .syntax {
+  display: none;
+}
 html,
 body {
   width: 100%;
@@ -358,7 +382,7 @@ section#player .player-header {
   position: relative;
   float: left;
   width: 100%;
-  height: 40px;
+  min-height: 40px;
 }
 section#player .player-header .player-header-title {
   float: left;
@@ -371,7 +395,7 @@ section#player .player-header .player-header-desc {
   line-height: 40px;
 }
 section#player .player-menu {
-  float: right;
+  float: left;
   width: 25%;
   height: 40px;
 }
@@ -383,10 +407,10 @@ section#player .player-tabs {
   height: 100%;
 }
 section#player .player-tabs.code {
-  width: calc(25%);
+  width: 25%;
 }
 section#player .player-tabs.demo {
-  width: calc(75%);
+  width: 75%;
 }
 section#player .player-tabs .player-tabs-nav {
   float: left;
@@ -418,7 +442,7 @@ section#player .player-tabs .player-tabs-nav li.selected {
   border-right: 1px solid #e6e6e6;
   cursor: auto;
 }
-section#player .player-tabs .player-tabs-window {
+section#player .player-tabs .player-tabs-windows {
   position: relative;
   float: left;
   width: 100%;
@@ -429,7 +453,7 @@ section#player .player-tabs .player-tabs-window {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-section#player .player-tabs .player-tabs-window .div {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -440,21 +464,21 @@ section#player .player-tabs .player-tabs-window .div {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-section#player .player-tabs .player-tabs-window .div form {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container form {
   width: 100%;
   height: 100%;
 }
-section#player .player-tabs .player-tabs-window .div form textarea {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container form textarea {
   width: 100%;
   height: 100%;
 }
-section#player .player-tabs .player-tabs-window .div .highlight {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container .highlight {
   margin-top: 0;
 }
-section#player .player-tabs .player-tabs-window .div .highlight code {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container .highlight code {
   height: 100%;
 }
-section#player .player-tabs .player-tabs-window .div .absolute-center {
+section#player .player-tabs .player-tabs-windows .player-tabs-window-container .absolute-center {
   position: absolute;
   top: calc(50% - 30px);
   left: 50%;
@@ -496,6 +520,10 @@ section#search .search-results-container .search-result-box {
   margin: 0px 20px 20px 0px;
   width: 250px;
   overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 section#search .search-results-container .search-result-box:hover {
   cursor: pointer;
@@ -524,15 +552,43 @@ section#search .search-results-container .search-result-box .search-result-box-o
 section#search .search-results-container .search-result-box .search-result-box-overlay h4 {
   padding-top: 4px;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 768px) {
   body {
-    width: 712px;
-    padding: 48px 28px 60px;
+    max-width: 712px;
+  }
+  .player-menu {
+    min-width: 100%;
   }
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (max-width: 480px) {
   body {
-    width: 436px;
-    padding: 36px 22px 48px;
+    max-width: 436px;
+  }
+  .player-header-title {
+    margin: 0 10px 0 15px;
+    line-height: 40px;
+  }
+  .player-header-desc {
+    margin: 0;
+    line-height: 40px;
+  }
+  .player-menu {
+    float: none;
+    min-width: 100%;
+  }
+  .player-tabs {
+    float: left;
+  }
+  .player-tabs.code {
+    min-width: 100%;
+  }
+  .player-tabs.demo {
+    min-width: 100%;
+  }
+  .search-result-box {
+    min-width: calc(100% - 40px);
+  }
+  .search-result-box .search-result-box-img {
+    min-width: 100%;
   }
 }

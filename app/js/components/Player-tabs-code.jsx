@@ -9,9 +9,12 @@ var PlayerTabsCode = React.createClass({
 					<li className="selected">CSS</li>
 					<li>HTML</li>
 				</ul>
-				<div className="player-tabs-window background-color-white">
-					<div></div>
-					<div></div>
+				<div className="player-tabs-windows background-color-white">
+					<div className="player-tabs-window-container"></div>
+					<div className="player-tabs-window-container">
+
+
+					</div>
 				</div>
 			</div>
 		)

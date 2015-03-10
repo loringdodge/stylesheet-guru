@@ -13,6 +13,9 @@ var SearchResults = React.createClass({
 				</div>	
 				<div className="search-results-container background-color-red border-top-red">
 					<SearchResultsBox />
+					<SearchResultsBox />
+					<SearchResultsBox />
+					<SearchResultsBox />
 				</div>	
 			</section>
 		);

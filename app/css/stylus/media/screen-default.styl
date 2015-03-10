@@ -39,7 +39,7 @@ section#player
 		position relative
 		float left
 		width 100%
-		height 40px
+		min-height 40px
 		
 		.player-header-title
 			float left
@@ -53,7 +53,7 @@ section#player
 	
 	// MENU / PLAYER BUTTONS
 	.player-menu
-		float right
+		float left
 		width 25%
 		height 40px
 		
@@ -65,10 +65,10 @@ section#player
 		height 100%
 		
 		&.code
-			width calc(25%)
+			width 25%
 			
 		&.demo
-			width calc(75%)
+			width 75%
 
 		.player-tabs-nav
 			float left
@@ -100,7 +100,7 @@ section#player
 					border-right 1px solid #E6E6E6
 					cursor auto
 					
-		.player-tabs-window
+		.player-tabs-windows
 			position relative
 			float left
 			width 100%
@@ -108,7 +108,7 @@ section#player
 			border-right 1px solid #E6E6E6
 			box-sizing border-box
 			
-			.div
+			.player-tabs-window-container
 				position absolute
 				top 0
 				left 0
@@ -172,6 +172,7 @@ section#search
 			margin 0px 20px 20px 0px
 			width 250px
 			overflow hidden
+			box-sizing border-box
 			
 			&:hover
 				cursor pointer

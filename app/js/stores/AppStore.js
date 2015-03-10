@@ -23,8 +23,9 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
   switch (action.type) {
     case ActionTypes.APP_INITIALIZE:
       reset();
-      /* falls through */
+
     case ActionTypes.SWITCH_PAGE:
+      console.log(action);
       appState.page = action.page;
       appState.path = action.path;
       break;

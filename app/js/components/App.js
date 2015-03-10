@@ -9,7 +9,7 @@ var Pages = AppConstants.Pages;
 function getPageComponent(page) {
   switch (page) {
     case Pages.HOME:        return require('./Home.jsx');
-    case Pages.HELLO_WORLD: return require('./HelloWorld.jsx');
+    case Pages.DEMO: return require('./Demo.jsx');
     case Pages.NOT_FOUND:   return require('./NotFound');
     default:
       throw new Error('Missing "Pages.' + page + '"');
@@ -17,6 +17,7 @@ function getPageComponent(page) {
 }
 
 function getStateFromStores() {
+  console.log("App.js: getStateFromStores()");
   return {
     appState: AppStore.getState()
   };
@@ -45,8 +46,10 @@ var App = React.createClass({
   },
 
   render: function() {
+    console.log("App.js: render", this.state.appState);
     var appState = this.state.appState;
     var PageComponent = getPageComponent(appState.page);
+    console.log("App.js: PageComponent", PageComponent);
     return React.createElement(PageComponent, {appState: appState});
   }
 });

@@ -20,7 +20,7 @@ var NotFound = React.createClass({
         React.createElement('h2', null, '404'),
         React.createElement('ul', null,
           React.createElement('li', null,
-            React.createElement(Navigate, {page: Pages.HOME}, 'Go to "home"')),
+            React.createElement(Navigate, {page: Pages.HOM}, 'Go to "home"')),
           React.createElement('li', null,
             React.createElement(Navigate, {page: Pages.HELLO_WORLD}, 'Go to "hello world"'))
         )

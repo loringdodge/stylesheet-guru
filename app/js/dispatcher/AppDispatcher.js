@@ -27,6 +27,7 @@ var AppDispatcher = assign(new Dispatcher(), {
       source: PayloadSources.VIEW_ACTION,
       action: action
     };
+    console.log("AppDispatcher: handleViewAction", action);
     this.dispatch(payload);
   }
 

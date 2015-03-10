@@ -1,16 +1,18 @@
-// Use source maps in stack traces
+////////// Use source maps in stack traces //////////
 if (process.env.NODE_ENV !== 'production') {
   require('source-map-support').install();
 }
 
+////////// Require resources //////////
 var _ = require('underscore');
 var express = require('express');
 var fs = require('fs');
 var htmlescape = require('htmlescape');
 var morgan = require('morgan');
-var r = require('./db/index');
+var q = require('q');
 
 var ServerConstants = require('./constants/ServerConstants');
+var ApiRouter = require('./api');
 
 var Config = ServerConstants.Config;
 var LayoutConfig = ServerConstants.LayoutConfig;
@@ -18,10 +20,32 @@ var LayoutConfig = ServerConstants.LayoutConfig;
 var server = express();
 var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
+////////// Create database: 'rethinkDB', 'mysql', 'mongo', 'cassandra' //////////
+switch (Config.DATABASE) {
+  case 'rethinkDB':        
+    r = require('./db/rethink/');
+    break;
+  case 'mysql': 
+    require('./db/mysql/');
+    break;
+  case 'mongoDB':   
+    var db = require('./db/mongo/');
+    db.setup();
+    break;
+  case 'cassandra':   
+    require('./db/cassandra/');
+    break;
+  default:
+    throw new Error('No database is defined.');
+}
+
+////////// Routes //////////
 server.use(morgan('dev'));
 server.use('/', express.static(Config.PUBLIC_DIR));
 
-server.get('*', function(req, res) {
+server.use('/api', ApiRouter);
+
+server.use('/demo', function(req, res) {
 
   var bootstrap = {
     path: req.path
@@ -37,6 +61,7 @@ server.get('*', function(req, res) {
     var Application = require(Config.APPLICATION_FILE);
     var rootComponentHTML = Application.start(bootstrap);
     layoutData.rootComponentHTML = rootComponentHTML;
+    console.log(req.path);
     status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
   } else {
     status = 200;

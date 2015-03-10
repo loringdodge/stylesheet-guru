@@ -31,6 +31,7 @@ var AppActions = {
       page: page,
       path: path
     };
+    console.log("AppActions: navigateSwitchPage"+ action);
     AppDispatcher.handleViewAction(action);
   },
 

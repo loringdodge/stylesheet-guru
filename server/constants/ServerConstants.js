@@ -9,6 +9,7 @@ module.exports = {
     PUBLIC_DIR: path.resolve('public'),
     APPLICATION_FILE: path.resolve('public/main.js'),
     LAYOUT_FILE: path.resolve('server/views/layout.tmpl'),
+    DATABASE: 'rethinkDB'
   },
 
   LayoutConfig: {

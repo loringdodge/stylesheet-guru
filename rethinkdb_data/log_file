@@ -1,0 +1,15 @@
+2015-03-07T19:06:05.554718000 0.032450s notice: Recursively removing directory /Users/loringdodge/stylesheet-guru/rethinkdb_data/tmp
+2015-03-07T19:06:05.556538000 0.034275s notice: Initializing directory /Users/loringdodge/stylesheet-guru/rethinkdb_data
+2015-03-07T19:06:05.556664000 0.034395s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/loringdodge/stylesheet-guru/rethinkdb_data' did not already exist or is empty.)
+2015-03-07T19:06:05.556742000 0.034474s notice: Running rethinkdb 1.16.2-1 (CLANG 6.0 (clang-600.0.56))...
+2015-03-07T19:06:05.582188000 0.059920s notice: Running on Darwin 14.0.0 x86_64
+2015-03-07T19:06:05.582249000 0.059979s notice: Loading data from directory /Users/loringdodge/stylesheet-guru/rethinkdb_data
+2015-03-07T19:06:05.793060000 0.270790s info: Automatically using cache size of 100 MB
+2015-03-07T19:06:05.793068000 0.270798s warn: Cache size does not leave much memory for server and query overhead (available memory: 720 MB).
+2015-03-07T19:06:05.793072000 0.270802s warn: Cache size is very low and may impact performance.
+2015-03-07T19:06:05.793699000 0.271430s notice: Listening for intracluster connections on port 29015
+2015-03-07T19:06:05.794409000 0.272139s notice: Listening for client driver connections on port 28015
+2015-03-07T19:06:05.794530000 0.272261s notice: Listening for administrative HTTP connections on port 8080
+2015-03-07T19:06:05.794538000 0.272269s notice: Listening on addresses: 127.0.0.1, ::1
+2015-03-07T19:06:05.794542000 0.272273s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-03-07T19:06:05.794547000 0.272277s notice: Server ready, "MacBook_Pro_sjt" d0f98982-a0e8-4df6-8af0-9293b8418ff6
