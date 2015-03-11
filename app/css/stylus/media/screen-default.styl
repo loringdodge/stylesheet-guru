@@ -63,6 +63,7 @@ section#player
 	.player-tabs
 		float left
 		height 100%
+		background-color grey-background
 		
 		&.code
 			width 25%
@@ -74,7 +75,8 @@ section#player
 			float left
 			width 100%
 			height 30px
-			border-bottom 1px solid #E6E6E6
+			border-bottom 1px solid #CCC
+			box-shadow(inset 1px -1px 3px #E6E6E6)
 			
 			li
 				float left
@@ -86,19 +88,22 @@ section#player
 				text-align center
 				cursor pointer
 				display inline-block
+				border-radius(5px 5px 0 0)
 				
 				&:hover
-					color #333
-					background-color #FFD464
+					color white
+					background-color #333333
 					
 				&.selected
 					height 31px
 					color #333
 					font-weight 700
 					background-color white
-					border-left 1px solid #E6E6E6
-					border-right 1px solid #E6E6E6
+					border-top 1px solid #E6E6E6
+					border-right 1px solid #CCC
 					cursor auto
+					border-radius(5px 5px 0 0)
+					box-shadow(1px -3px 3px #E6E6E6)
 					
 		.player-tabs-windows
 			position relative
@@ -107,6 +112,8 @@ section#player
 			height calc(100% - 30px)
 			border-right 1px solid #E6E6E6
 			box-sizing border-box
+			background-color white
+			box-shadow(-1px 2px 3px #E6E6E6)
 			
 			.player-tabs-window-container
 				position absolute

@@ -6,7 +6,7 @@ var PlayerHeader = React.createClass({
 
 	render: function() {
 		return (
-			<div className="player-header background-color-yellow">
+			<div className="player-header background-color-grey-back">
 				<PlayerMenu />
 				<h2 className="player-header-title text-bold-700">Speech Bubble</h2>
 				<p className="player-header-desc text-size-14px">How to create a speech bubble using :after and :before</p>
