@@ -5,7 +5,8 @@ module.exports = {
   ActionTypes: keyMirror({
     APP_INITIALIZE: null,
     APP_RESET: null,
-    SWITCH_PAGE: null
+    SWITCH_PAGE: null,
+    GET_DEMOS: null
   }),
 
   PayloadSources: keyMirror({
@@ -17,10 +18,6 @@ module.exports = {
     HOME: null,
     DEMO: null,
     NOT_FOUND: null
-  }),
-
-  SearchResponse: keyMirror({
-    RECEIVE_DATA: null
   }),
 
   LayoutConfig: {

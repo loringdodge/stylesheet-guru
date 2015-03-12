@@ -2,11 +2,11 @@ var r = require('../db/rethink/');
 
 var ApiController = {
 
-	findDemoByName: function(req, res){
+	findDemoByTitle: function(req, res){
 		var title = req.path;
 		
 		r.db('guru').table('demos')
-	    .filter({url: 'demo'}).limit(1)
+	    // .filter({url: title}).limit(1)
 	    .run(r.connection)
 	    .then(function(cursor){
 	      return cursor.toArray();

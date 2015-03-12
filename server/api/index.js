@@ -4,6 +4,6 @@ var ApiController = require('./apiController');
 
 var ApiRouter = express.Router();
 
-ApiRouter.get('/*', ApiController.findDemoByName);
+ApiRouter.get('/demo', ApiController.findDemoByTitle);
 
 module.exports = ApiRouter;

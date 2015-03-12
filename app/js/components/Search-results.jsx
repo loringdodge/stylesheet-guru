@@ -1,24 +1,32 @@
 var React = require('react');
+var _ = require('underscore');
 
+var AppActions = require('../actions/AppActions');
+
+var SearchBar = require('./Search-bar.jsx');
 var SearchResultsBox = require('./Search-results-box.jsx');
 
 var SearchResults = React.createClass({
 
-	render: function() {
+	propTypes: {
+    appState: React.PropTypes.object.isRequired
+  },
 
+	render: function() {
+		console.log(this.props);
 		return (
 			<section id="search">
-				<div className="search-box background-color-grey">
-					<input className="search-box-input background-color-black text-color-white border-radius-5px" placeholder="What are you looking for?" />
-				</div>	
+				<SearchBar />
 				<div className="search-results-container background-color-red border-top-red">
-					<SearchResultsBox />
-					<SearchResultsBox />
-					<SearchResultsBox />
-					<SearchResultsBox />
+					{ _.map(this.props._demos, function(result){
+						return (
+							<SearchResultsBox />
+						);
+					}, this) }
 				</div>	
 			</section>
 		);
+
 	}
 
 });

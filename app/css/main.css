@@ -46,6 +46,7 @@ h6 {
   padding: 0;
 }
 a {
+  color: #000;
   background-color: transparent;
   text-decoration: none;
 }
@@ -330,7 +331,7 @@ h4 {
   border-bottom: 1px solid #f4f4f4;
 }
 .code-block .code-block-row .code-block-row-number {
-  display: inline-block;
+  float: left;
   width: 20px;
   height: 100%;
   line-height: 25px;
@@ -346,10 +347,7 @@ h4 {
   font-family: monospace;
   font-weight: 500;
   font-size: 14px;
-  display: inline-block;
-}
-.code-block .code-block-row .code-block-row-line .indent {
-  padding-left: 20px;
+  float: left;
 }
 .code-block .code-block-row .code-block-row-line .selector {
   color: #2a452a;
@@ -364,6 +362,24 @@ h4 {
 .code-block .code-block-row .code-block-row-line .syntax {
   padding: 0 5px;
   color: #000;
+}
+.code-block .code-block-row.highlighted {
+  background-color: #333;
+}
+.code-block .code-block-row.highlighted .code-block-row-line {
+  background-color: #333;
+}
+.code-block .code-block-row.highlighted .code-block-row-line .selector {
+  color: #fff;
+}
+.code-block .code-block-row.highlighted .code-block-row-line .property {
+  color: #fff;
+}
+.code-block .code-block-row.highlighted .code-block-row-line .value {
+  color: #fff;
+}
+.code-block .code-block-row.highlighted .code-block-row-line .syntax {
+  color: #fff;
 }
 html,
 body {

@@ -3,10 +3,10 @@ var RouteConstants = require('../constants/RouteConstants');
 
 var ServerUtils = {
 
-	getDemoResponse: function(title) {
-    $.get("/api/demo", title).done(function(data) {
-      console.log(title);
-    }.bind(this));
+	getDemosByTitle: function() {
+    $.get("/api/demo").then(function(data) {
+      return data;
+    });
   },
 
   demoExists: function(page, response) {

@@ -3,49 +3,12 @@ var _ = require('underscore');
 
 var PlayerTabsCode = React.createClass({
 
-	getInitialState: function() {
-		this.props.lineNumber = 0;
-		this.props.times = [{
-				"selector" : ".speech-bubble",
-    		"properties" : {
-				  "position" : "relative",
-					"width" : "300px",
-					"height" : "200px",
-					"border-radius" : "50%",
-					"background-color" : "#FFD464",
-					"borderColor" : "transparent",
-    		}
-    	},{
-    		"selector" : ".speech-bubble:after",
-    		"properties" : {
-    			"content" : "''",
-					"position" : "absolute",
-					"top" : "98%",
-					"right" : "20%",
-					"width" : "30px",
-					"height" : "30px",
-					"border-radius" : "50%",
-					"background-color" : "#FFD464",
-					"borderColor" : "transparent",
-    		},
-    	},{
-    		"selector" : ".speech-bubble:before",
-    		"properties" : {
-    			"content" : "''",
-					"position":  "absolute",
-					"top" : "110%",
-					"right" : "12%",
-					"width" : "20px",
-					"height" : "20px",
-					"border-radius" : "50%",
-					"background-color" : "#FFD464",
-					"borderColor" : "transparent",
-    		}
-    }];
-  	return {};
+ 	propTypes: {
+    appState: React.PropTypes.object.isRequired
   },
 
 	render: function() {
+		console.log(this.props)
 		return (
 			<div className="player-tabs code">
 				<ul className="player-tabs-nav">
@@ -56,11 +19,11 @@ var PlayerTabsCode = React.createClass({
 					<div className="player-tabs-window-container"></div>
 					<div className="player-tabs-window-container">
 						<div className="code-block">
-							{ _.map(this.props.times, function(css) {
+							{ _.map(this.props._player._playerCode, function(css) {
 									return (
 										<div>
 											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props.lineNumber}</div>
+												<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
 												<div className="code-block-row-line">
 													<span className="selector">{css.selector}</span>
 													<span className="syntax">&#123;</span>
@@ -69,7 +32,7 @@ var PlayerTabsCode = React.createClass({
 											{ _.map(css.properties, function(value, property) {
 												return (
 													<div className="code-block-row">
-														<div className="code-block-row-number">{++this.props.lineNumber}</div>
+														<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
 														<div className="code-block-row-line">
 															<span className="property">{property}</span>
 															<span className="syntax">&#58;</span>
@@ -80,7 +43,7 @@ var PlayerTabsCode = React.createClass({
 												);
 											}, this) }
 											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props.lineNumber}</div>
+												<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
 												<div className="code-block-row-line">
 													<span className="syntax">&#125;</span>
 												</div> 

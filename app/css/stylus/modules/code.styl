@@ -3,6 +3,10 @@ code-selector-color = #2A452A
 code-property-color = #B22F3D
 code-value-color = #3080A1
 code-syntax-color = black
+code-selector-highlight = #FFFFFF
+code-property-highlight = #FFFFFF
+code-value-highlight = #FFFFFF
+code-syntax-highlight = #FFFFFF
 
 // ********** CODE HIGHLIGHTING **********
 .code-block
@@ -16,7 +20,7 @@ code-syntax-color = black
 		border-bottom 1px solid #F4F4F4
 		
 		.code-block-row-number
-			display inline-block
+			float left
 			width 20px
 			height 100%
 			line-height 25px
@@ -32,10 +36,7 @@ code-syntax-color = black
 			font-family monospace
 			font-weight 500
 			font-size 14px
-			display inline-block
-			
-			.indent
-				padding-left 20px
+			float left
 			
 			.selector
 				color code-selector-color
@@ -50,6 +51,26 @@ code-syntax-color = black
 			.syntax
 				padding 0 5px
 				color code-syntax-color
+				
+		&.highlighted
+			background-color #333
+				
+			.code-block-row-line
+				background-color #333
+				
+				.selector
+					color code-selector-highlight
+					
+				.property
+					color code-property-highlight
+					
+				.value
+					color code-value-highlight
+					
+				.syntax
+					color code-syntax-highlight
+				
+
 				
 
 

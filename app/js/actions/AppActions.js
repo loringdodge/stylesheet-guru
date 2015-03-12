@@ -1,6 +1,7 @@
 var AppConstants = require('../constants/AppConstants');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var RouteUtils = require('../utils/RouteUtils');
+var ServerUtils = require('../utils/ServerUtils');
 
 var ActionTypes = AppConstants.ActionTypes;
 var SearchResponse = AppConstants.SearchResponse;
@@ -45,13 +46,40 @@ var AppActions = {
     AppDispatcher.handleViewAction(action);
   },
 
-  receiveData: function(data) {
-    var action = {
-      actionType: SearchResponse.RECEIVE_DATA,
-      data: data
-    }
-    AppDispatcher.handleViewAction(action);
-  }
+  getDemosByTitle: function() {
+    // Ajax request here
+    // On success:
+    ServerUtils.getDemosByTitle()
+      .then(function(data){
+        console.log(data);
+        // var action = {
+        //   type: ActionTypes.GET_DEMOS,
+        //   title: data
+        // };
+        // console.log("AppActions: getDemosByTitle"+ action);
+        // AppDispatcher.handleServerAction(action);
+      })
+    // var a = [{
+    //   "title" : "Speech Bubble",
+    //   "keywords" : "keyframes"
+    // }, {
+    //   "title" : "Speech Bubble",
+    //   "keywords" : "keyframes"
+    // }, {
+    //   "title" : "Speech Bubble",
+    //   "keywords" : "keyframes"
+    // }, {
+    //   "title" : "Speech Bubble",
+    //   "keywords" : "keyframes"
+    // }];
+    // console.log(a);
+    //   var action = {
+    //     type: ActionTypes.GET_DEMOS,
+    //     title: a
+    //   };
+    //   console.log("AppActions: getDemosByTitle"+ action);
+    //   AppDispatcher.handleServerAction(action);
+  },
 
 };
 

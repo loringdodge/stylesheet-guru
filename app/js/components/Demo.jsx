@@ -16,15 +16,13 @@ var HelloWorld = React.createClass({
   },
 
   render: function() {
+        console.log("Hello",this.props);
     return (
       <div>
         <Header />
         <main>
-          <Player>
-            // <h1>Hello World!</h1>
-            // <Navigate page={Pages.HOME}>Go to "home"</Navigate>
-          </Player>
-          <SearchResults />
+          <Player _player={this.props.appState._player} />
+          <SearchResults _demos={this.props.appState._demos} />
         </main>
       </div>
     );
