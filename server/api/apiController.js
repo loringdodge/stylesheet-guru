@@ -3,7 +3,6 @@ var r = require('../db/rethink/');
 var ApiController = {
 
 	findDemoByTitle: function(req, res){
-		var title = req.path;
 		
 		r.db('guru').table('demos')
 	    // .filter({url: title}).limit(1)
@@ -14,9 +13,9 @@ var ApiController = {
 	    .then(function(data){
 	    	console.log("[INFO] RethinkDB: foundDemoByName - > Successfully found %s",
 	    		req.path);
-	      res.status(200).json(markup);
+	      res.status(200).json(data);
 	    })
-	    .catch(function (err) {
+	    .catch(function (error) {
 		    console.log("[ERROR] RethinkDB: findDemoByName -> Can't find %s (%s:%s)\n%s",
 		      req.path, error.name, error.msg, error.message);
 		    return res.status(400).end();

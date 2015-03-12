@@ -47,38 +47,14 @@ var AppActions = {
   },
 
   getDemosByTitle: function() {
-    // Ajax request here
-    // On success:
-    ServerUtils.getDemosByTitle()
-      .then(function(data){
-        console.log(data);
-        // var action = {
-        //   type: ActionTypes.GET_DEMOS,
-        //   title: data
-        // };
-        // console.log("AppActions: getDemosByTitle"+ action);
-        // AppDispatcher.handleServerAction(action);
+    ServerUtils.getDemosByTitle(function(data){
+        var action = {
+          type: ActionTypes.GET_DEMOS,
+          title: data
+        };
+        console.log("AppActions: getDemosByTitle"+ action);
+        AppDispatcher.handleServerAction(action);
       })
-    // var a = [{
-    //   "title" : "Speech Bubble",
-    //   "keywords" : "keyframes"
-    // }, {
-    //   "title" : "Speech Bubble",
-    //   "keywords" : "keyframes"
-    // }, {
-    //   "title" : "Speech Bubble",
-    //   "keywords" : "keyframes"
-    // }, {
-    //   "title" : "Speech Bubble",
-    //   "keywords" : "keyframes"
-    // }];
-    // console.log(a);
-    //   var action = {
-    //     type: ActionTypes.GET_DEMOS,
-    //     title: a
-    //   };
-    //   console.log("AppActions: getDemosByTitle"+ action);
-    //   AppDispatcher.handleServerAction(action);
   },
 
 };
