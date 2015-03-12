@@ -6,7 +6,7 @@ var ServerUtils = {
 	getDemosByTitle: function() {
     $.get('/api/demo').then(function(data) {
       return data;
-    }).bind(this);
+    });
   }
 
 }

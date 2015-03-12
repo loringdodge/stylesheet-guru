@@ -20,24 +20,9 @@ var LayoutConfig = ServerConstants.LayoutConfig;
 var server = express();
 var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
-////////// Create database: 'rethinkDB', 'mysql', 'mongo', 'cassandra' //////////
-switch (Config.DATABASE) {
-  case 'rethinkDB':        
-    r = require('./db/rethink/');
-    break;
-  case 'mysql': 
-    require('./db/mysql/');
-    break;
-  case 'mongoDB':   
-    var db = require('./db/mongo/');
-    db.setup();
-    break;
-  case 'cassandra':   
-    require('./db/cassandra/');
-    break;
-  default:
-    throw new Error('No database is defined.');
-}
+////////// Connect to database: 'rethinkDB' //////////
+  
+var r = require('./db/rethink/');
 
 ////////// Routes //////////
 server.use(morgan('dev'));
