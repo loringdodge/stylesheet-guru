@@ -30,7 +30,6 @@ var Navigate = React.createClass({
   },
 
   onClick: function(e) {
-    console.log("Navigate: onClick", e);
     if (this.props.onClick) {
       this.props.onClick(e);
     }
@@ -38,13 +37,16 @@ var Navigate = React.createClass({
       return;
     }
     e.preventDefault();
-    console.log("Navigate: href/page", this.state.href);
     var href = this.state.href;
     var page = this.props.page;
+    var id;
+    if(this.props.ident !== undefined){
+      var id = this.props.ident;
+    }
     if (window.location.pathname !== href) {
       window.history.pushState({}, document.title, href);
     }
-    AppActions.navigateSwitchPage(href, page);
+    AppActions.navigateSwitchPage(href, page, id);
   },
 
   render: function() {

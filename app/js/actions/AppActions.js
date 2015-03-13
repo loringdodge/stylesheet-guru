@@ -26,13 +26,22 @@ var AppActions = {
     });
   },
 
-  navigateSwitchPage: function(path, page) {
+  navigateSwitchPage: function(path, page, id) {
+    var demo = null;
     var action = {
       type: ActionTypes.SWITCH_PAGE,
       page: page,
-      path: path
+      path: path,
+      demo: demo
     };
-    AppDispatcher.handleViewAction(action);
+    if(id !== undefined){
+      ServerUtils.getDemoById(id, function(demo){
+        
+          AppDispatcher.handleViewAction(action);
+        });
+    } else {  
+      AppDispatcher.handleViewAction(action);
+    }
   },
 
   popStateSwitchPage: function(path) {
@@ -48,7 +57,6 @@ var AppActions = {
   getDemosByTitle: function(title) {
     var title = title || '';
     ServerUtils.getDemosByTitle(title, function(demos){
-      console.log(demos);
         var action = {
           type: ActionTypes.GET_DEMOS,
           demos: demos

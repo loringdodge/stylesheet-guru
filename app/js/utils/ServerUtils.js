@@ -8,6 +8,13 @@ var ServerUtils = {
     $.get('/api/demos/' + title).then(function(data) {
       return callback(data);
     });
+  },
+
+  getDemoById: function(id, callback) {
+		var id = id || '';
+    $.get('/api/demo/' + id).then(function(data) {
+      return callback(data);
+    });
   }
 
 }
