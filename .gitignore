@@ -1,4 +1,5 @@
 *.DS_Store
 /node_modules
 /public
+/rethinkdb_data
 npm-debug.log
