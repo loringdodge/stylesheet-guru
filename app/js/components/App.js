@@ -17,7 +17,6 @@ function getPageComponent(page) {
 }
 
 function getStateFromStores() {
-  console.log("App.js: getStateFromStores()");
   return {
     appState: AppStore.getState()
   };
@@ -46,10 +45,8 @@ var App = React.createClass({
   },
 
   render: function() {
-    console.log("App.js: render", this.state.appState);
     var appState = this.state.appState;
     var PageComponent = getPageComponent(appState.page);
-    console.log("App.js: PageComponent", PageComponent);
     return React.createElement(PageComponent, {appState: appState});
   }
 });

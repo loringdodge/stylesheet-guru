@@ -16,7 +16,6 @@ var HelloWorld = React.createClass({
   },
 
   render: function() {
-        console.log("Hello",this.props);
     return (
       <div>
         <Header />

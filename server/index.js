@@ -46,7 +46,6 @@ server.use('/demo', function(req, res) {
     var Application = require(Config.APPLICATION_FILE);
     var rootComponentHTML = Application.start(bootstrap);
     layoutData.rootComponentHTML = rootComponentHTML;
-    console.log(req.path);
     status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
   } else {
     status = 200;

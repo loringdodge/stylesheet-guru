@@ -32,7 +32,6 @@ var AppActions = {
       page: page,
       path: path
     };
-    console.log("AppActions: navigateSwitchPage"+ action);
     AppDispatcher.handleViewAction(action);
   },
 
@@ -52,7 +51,6 @@ var AppActions = {
           type: ActionTypes.GET_DEMOS,
           title: data
         };
-        console.log("AppActions: getDemosByTitle"+ action);
         AppDispatcher.handleServerAction(action);
       })
   },
