@@ -14,3 +14,4 @@
 2015-03-07T19:06:05.794542000 0.272273s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2015-03-07T19:06:05.794547000 0.272277s notice: Server ready, "MacBook_Pro_sjt" d0f98982-a0e8-4df6-8af0-9293b8418ff6
 2015-03-12T17:42:52.138548000 144402.400649s notice: Removing file /Users/loringdodge/stylesheet-guru/rethinkdb_data/99ea2fb8-6d25-4f67-baa1-5973ed7f7aa1
+2015-03-12T22:48:02.704267000 151096.671374s notice: Removing file /Users/loringdodge/stylesheet-guru/rethinkdb_data/b52d01c0-03c6-4d1c-af8b-a972f5a71ef6

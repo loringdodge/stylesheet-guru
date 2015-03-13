@@ -68,10 +68,7 @@ var appState = {
 var AppStore = assign(new Store(), {
   getState: function() {
     return appState;
-  },
-  // handleDemos: function() {
-  //   fdas
-  // }
+  }
 });
 
 AppStore.dispatchToken = AppDispatcher.register(function(payload) {
@@ -92,7 +89,7 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       break;
 
     case ActionTypes.GET_DEMOS:
-      appState._demos = action.title;
+      appState._demos = action.demos;
       break;
 
     default:

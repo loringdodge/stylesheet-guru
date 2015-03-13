@@ -5,29 +5,76 @@ var data = require('./data');
 var ApiController = {
 
 	findDemosByTitle: function(req, res){
+		var title = req.params.title;
 		
+		if(title !== undefined){
+			r.db('guru').table('demos')
+		    .filter(function(doc){
+				  return doc('url').match(title);
+				})
+		    .run(r.connection)
+		    .then(function(cursor){
+		      return cursor.toArray();
+		    })
+		    .then(function(data){
+		    	console.log("[INFO] RethinkDB: foundDemosByTitle - > Successfully found %s",
+		    		req.title);
+		      res.status(200).json(data);
+		    })
+		    .catch(function (error) {
+			    console.log("[ERROR] RethinkDB: foundDemosByTitle -> Can't find %s (%s:%s)\n%s",
+			      req.title, error.name, error.msg, error.message);
+			    return res.status(400).end();
+			  });
+
+		} else {
+			r.db('guru').table('demos')
+		    .run(r.connection)
+		    .then(function(cursor){
+		      return cursor.toArray();
+		    })
+		    .then(function(data){
+		    	console.log("[INFO] RethinkDB: foundDemosByTitle - > Successfully found %s",
+		    		req.path);
+		    	console.log(data);
+		      res.status(200).json(data);
+		    })
+		    .catch(function (error) {
+			    console.log("[ERROR] RethinkDB: foundDemosByTitle -> Can't find %s (%s:%s)\n%s",
+			      req.path, error.name, error.msg, error.message);
+			    return res.status(400).end();
+			  });
+		}
+
+	},
+
+	findDemoById: function(req, res){
+		var id = req.params.id;
+
 		r.db('guru').table('demos')
-	    // .filter({url: title}).limit(1)
+	    .filter({id: id})
+	    .limit(1)
 	    .run(r.connection)
 	    .then(function(cursor){
 	      return cursor.toArray();
 	    })
 	    .then(function(data){
-	    	console.log("[INFO] RethinkDB: foundDemoByName - > Successfully found %s",
-	    		req.path);
-	    	console.log(data);
+	    	console.log("[INFO] RethinkDB: findDemoById - > Successfully found %s",
+	    		req.id);
 	      res.status(200).json(data);
 	    })
 	    .catch(function (error) {
-		    console.log("[ERROR] RethinkDB: findDemoByName -> Can't find %s (%s:%s)\n%s",
-		      req.path, error.name, error.msg, error.message);
+		    console.log("[ERROR] RethinkDB: findDemoById -> Can't find %s (%s:%s)\n%s",
+		      req.id, error.name, error.msg, error.message);
 		    return res.status(400).end();
 		  });
+
 	},
 
 	emptyDemos: function(req, res){
 
 		r.db('guru').tableDrop('demos')
+			.run(r.connection)
 	    .then(function(data){
 	    	console.log("[INFO] RethinkDB: emptyDB - > Successfully deleted");
 	      res.status(200).json(data);

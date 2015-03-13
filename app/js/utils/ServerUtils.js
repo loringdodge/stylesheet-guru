@@ -3,8 +3,9 @@ var RouteConstants = require('../constants/RouteConstants');
 
 var ServerUtils = {
 
-	getDemosByTitle: function(callback) {
-    $.get('/api/demo').then(function(data) {
+	getDemosByTitle: function(title, callback) {
+		var title = title || '';
+    $.get('/api/demos/' + title).then(function(data) {
       return callback(data);
     });
   }

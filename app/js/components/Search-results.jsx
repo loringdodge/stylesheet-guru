@@ -18,9 +18,9 @@ var SearchResults = React.createClass({
 			<section id="search">
 				<SearchBar />
 				<div className="search-results-container background-color-red border-top-red">
-					{ _.map(this.props._demos, function(result){
+					{ _.map(this.props._demos, function(demo){
 						return (
-							<SearchResultsBox />
+							<SearchResultsBox demo={demo} />
 						);
 					}, this) }
 				</div>	

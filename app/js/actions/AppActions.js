@@ -45,14 +45,16 @@ var AppActions = {
     AppDispatcher.handleViewAction(action);
   },
 
-  getDemosByTitle: function() {
-    ServerUtils.getDemosByTitle(function(data){
+  getDemosByTitle: function(title) {
+    var title = title || '';
+    ServerUtils.getDemosByTitle(title, function(demos){
+      console.log(demos);
         var action = {
           type: ActionTypes.GET_DEMOS,
-          title: data
+          demos: demos
         };
         AppDispatcher.handleServerAction(action);
-      })
+      });
   },
 
 };
