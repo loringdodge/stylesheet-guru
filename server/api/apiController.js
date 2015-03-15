@@ -48,11 +48,11 @@ var ApiController = {
 
 	},
 
-	findDemoById: function(req, res){
-		var id = req.params.id;
+	findDemoByUrl: function(req, res){
+		var url = req.params.url;
 
 		r.db('guru').table('demos')
-	    .filter({id: id})
+	    .filter({url: url})
 	    .limit(1)
 	    .run(r.connection)
 	    .then(function(cursor){

@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('source-map-support').install();
 }
 
-////////// Require resources //////////
+////////// Require Modules //////////
 var _ = require('underscore');
 var express = require('express');
 var fs = require('fs');
@@ -21,7 +21,6 @@ var server = express();
 var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
 ////////// Connect to database: 'rethinkDB' //////////
-  
 var r = require('./db/rethink/');
 
 ////////// Routes //////////

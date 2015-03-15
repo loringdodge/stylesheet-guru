@@ -1,5 +1,4 @@
-
-
+var properties = require('./Player/properties');
 
 var PlayerUtils = {
 
@@ -11,8 +10,11 @@ var PlayerUtils = {
 		return $({});
 	},
 
-	makeAnimationFunc : function(){
+	makeAnimationFunc : function(step){
 		// creates an animation func with callback
+		return function(){
+    	$(selector).animate({})
+    }
 	},
 
 	isValidProperty : function(property){
