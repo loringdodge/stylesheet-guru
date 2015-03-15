@@ -3,22 +3,17 @@ if (process.env.NODE_ENV !== 'production') {
   require('source-map-support').install();
 }
 
-////////// Require Modules //////////
-var _ = require('underscore');
+////////// Modules //////////
 var express = require('express');
-var fs = require('fs');
-var htmlescape = require('htmlescape');
 var morgan = require('morgan');
-var q = require('q');
+
+var ApiRouter = require('./api');
+var DemoRouter = require('./demo');
 
 var ServerConstants = require('./constants/ServerConstants');
-var ApiRouter = require('./api');
-
 var Config = ServerConstants.Config;
-var LayoutConfig = ServerConstants.LayoutConfig;
 
 var server = express();
-var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
 ////////// Connect to database: 'rethinkDB' //////////
 var r = require('./db/rethink/');
@@ -29,31 +24,7 @@ server.use('/', express.static(Config.PUBLIC_DIR));
 
 server.use('/api', ApiRouter);
 
-server.use('/demo', function(req, res) {
-
-  var bootstrap = {
-    path: req.path
-  };
-
-  var layoutData = _.defaults({
-    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
-  }, LayoutConfig);
-
-  var status;
-
-  if (Config.SSR) {
-    var Application = require(Config.APPLICATION_FILE);
-    var rootComponentHTML = Application.start(bootstrap);
-    layoutData.rootComponentHTML = rootComponentHTML;
-    status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
-  } else {
-    status = 200;
-  }
-
-  var markup = layout(layoutData);
-
-  res.status(status).send(markup);
-});
+server.use('/demo', DemoRouter);
 
 server.listen(Config.PORT);
 
