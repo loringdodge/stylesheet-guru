@@ -1,4 +1,4 @@
-var r = require('../db/rethink/RethinkConnect');
+var r = require('../db/RethinkConnect');
 
 var data = require('./data');
 

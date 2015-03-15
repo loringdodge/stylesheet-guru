@@ -16,7 +16,7 @@ var Config = ServerConstants.Config;
 var server = express();
 
 ////////// Connect to database: 'rethinkDB' //////////
-var r = require('./db/rethink/RethinkConnect');
+var r = require('./db/RethinkConnect');
 
 ////////// Routes //////////
 server.use(morgan('dev'));

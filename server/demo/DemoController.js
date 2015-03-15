@@ -1,3 +1,4 @@
+////////// Modules //////////
 var _ = require('underscore');
 var fs = require('fs');
 var htmlescape = require('htmlescape');
@@ -10,9 +11,12 @@ var LayoutConfig = ServerConstants.LayoutConfig;
 
 var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
+////////// Demo Router //////////
 var DemoRouter = {
 
+	// Verifies url & sends layout.tmpl
 	getDemoByUrl: function(req, res) {
+		var url = req.params.url;
 
 	  var bootstrap = {
 	    path: req.path
