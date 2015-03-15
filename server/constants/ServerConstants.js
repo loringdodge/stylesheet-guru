@@ -18,6 +18,7 @@ module.exports = {
     stylesheet: '/main.css',
     script: '/main.js',
     jquery: '/bower_components/jquery/dist/jquery.min.js',
+    jqueryui: '/bower_components/jquery-ui/jquery-ui.min.js',
     applicationStart: 'Application.start();',
     rootComponentHTML: '',
     // Keep in sync with `app/constants/AppConstants.js`
