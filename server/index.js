@@ -7,8 +7,8 @@ if (process.env.NODE_ENV !== 'production') {
 var express = require('express');
 var morgan = require('morgan');
 
-var ApiRouter = require('./api');
-var DemoRouter = require('./demo');
+var ApiRouter = require('./api/ApiRouter');
+var DemoRouter = require('./demo/DemoRouter');
 
 var ServerConstants = require('./constants/ServerConstants');
 var Config = ServerConstants.Config;
@@ -16,7 +16,7 @@ var Config = ServerConstants.Config;
 var server = express();
 
 ////////// Connect to database: 'rethinkDB' //////////
-var r = require('./db/rethink/');
+var r = require('./db/rethink/RethinkConnect');
 
 ////////// Routes //////////
 server.use(morgan('dev'));

@@ -3,7 +3,7 @@ var fs = require('fs');
 var htmlescape = require('htmlescape');
 
 var ServerConstants = require('../constants/ServerConstants');
-var ApiRouter = require('../api');
+var ApiRouter = require('../api/ApiRouter');
 
 var Config = ServerConstants.Config;
 var LayoutConfig = ServerConstants.LayoutConfig;

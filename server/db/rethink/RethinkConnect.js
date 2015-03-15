@@ -1,11 +1,13 @@
 var r = require('rethinkdb');
 
+////////// DB Config //////////
 var dbConfig = {
   host: 'localhost',
   port: 28015,
   db  : 'guru'
 };
 
+////////// Connect to RethinkDB //////////
 r.connections = [];
 
 r.connect(dbConfig)
