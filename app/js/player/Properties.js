@@ -1,6 +1,6 @@
 var keyMirror = require('react/lib/keyMirror');
 
-var Properties = keyMirror{
+var Properties = keyMirror({
 
 	"align-content": null,
 	"align-items": null,
@@ -338,6 +338,6 @@ var Properties = keyMirror{
 	"writing-mode": null,
 	"z-index": null
 
-}
+});
 
 module.exports = Properties;
