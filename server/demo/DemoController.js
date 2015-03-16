@@ -5,6 +5,7 @@ var htmlescape = require('htmlescape');
 
 var ServerConstants = require('../constants/ServerConstants');
 var ApiRouter = require('../api/ApiRouter');
+var RethinkUtils = require('../db/RethinkUtils');
 
 var Config = ServerConstants.Config;
 var LayoutConfig = ServerConstants.LayoutConfig;
@@ -15,31 +16,38 @@ var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 var DemoRouter = {
 
 	// Verifies url & sends layout.tmpl
-	getDemoByUrl: function(req, res) {
+	initializeDemo: function(req, res) {
 		var url = req.params.url;
 
-	  var bootstrap = {
-	    path: req.path
-	  };
+		RethinkUtils.getDemoByUrl(url)
+			.then(function (data) {
+				var bootstrap = {
+		    	path: req.path,
+		    	demo: data
+			  };
 
-	  var layoutData = _.defaults({
-	    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
-	  }, LayoutConfig);
+			  var layoutData = _.defaults({
+			    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
+			  }, LayoutConfig);
 
-	  var status;
+			  var status;
 
-	  if (Config.SSR) {
-	    var Application = require(Config.APPLICATION_FILE);
-	    var rootComponentHTML = Application.start(bootstrap);
-	    layoutData.rootComponentHTML = rootComponentHTML;
-	    status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
-	  } else {
-	    status = 200;
-	  }
+			  if (Config.SSR) {
+			    var Application = require(Config.APPLICATION_FILE);
+			    var rootComponentHTML = Application.start(bootstrap);
+			    layoutData.rootComponentHTML = rootComponentHTML;
+			    status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
+			  } else {
+			    status = 200;
+			  }
 
-	  var markup = layout(layoutData);
+			  var markup = layout(layoutData);
 
-	  res.status(status).send(markup);
+			  res.status(status).send(markup);
+			})
+			.catch(function (err) {
+				res.status(400).end();
+			});
 
 	}
 
