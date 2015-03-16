@@ -13,7 +13,14 @@ var PlayerUtils = {
 	makeAnimationFunc : function(step){
 		// creates an animation func with callback
 		return function(){
-    	$(selector).animate({})
+    	$(selector).animate({});
+    }
+	},
+
+	makeCssFunc : function(step){
+		// creates a css func with callback
+		return function(){
+    	$(selector).css({});
     }
 	},
 
@@ -28,6 +35,16 @@ var PlayerUtils = {
 	isAnimatable : function(property){
     // return whether the property can be animated
 	},
+
+	addInitialBorder: function() {
+		// Adds the initial border to an element so it can be seen
+	},
+
+	addInitialBorder: function() {
+		// Adds the initial border to an element so it can be seen
+	},
+
+
 
 
 

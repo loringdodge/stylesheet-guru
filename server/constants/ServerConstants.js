@@ -13,7 +13,7 @@ module.exports = {
   },
 
   LayoutConfig: {
-    title: 'styelsheet.guru',
+    title: 'stylesheet.guru',
     favicon: 'about:blank',
     stylesheet: '/main.css',
     script: '/main.js',
