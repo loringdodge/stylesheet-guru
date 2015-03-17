@@ -11,9 +11,9 @@ var router = RouteBuilder(RouteConstants.ROUTES);
 
 var RouteUtils = {
 
-  getBestAvailablePath: function(options) {
-    if (options && options.path) {
-      return options.path;
+  getBestAvailablePath: function(path) {
+    if (path) {
+      return path;
     } else if (ExecutionEnvironment.canUseDOM) {
       return window.location.pathname;
     } else {
