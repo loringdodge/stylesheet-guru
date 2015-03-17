@@ -2,6 +2,8 @@ var properties = require('./Player/properties');
 
 var PlayerUtils = {
 
+	////////// Core //////////
+
 	makeTimeline : function(obj){
 		// parse css obj and turn it into a timeline object
 	},
@@ -39,6 +41,8 @@ var PlayerUtils = {
 	addInitialBorder: function() {
 		// Adds the initial border to an element so it can be seen
 	},
+
+	////////// Additional Features //////////	
 
 	addInitialBorder: function() {
 		// Adds the initial border to an element so it can be seen

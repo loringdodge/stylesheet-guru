@@ -20,11 +20,15 @@ var DemoRouter = {
 		var url = req.params.url;
 
 		RethinkUtils.getDemoByUrl(url)
-			.then(function (data) {
+			.then(function (demo) {
+				var demo = demo[0];
+
 				var bootstrap = {
-		    	path: req.path,
-		    	demo: data
+		    	path: '/demo',
+		    	demo: demo
 			  };
+
+			  console.log(demo);
 
 			  var layoutData = _.defaults({
 			    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
@@ -36,7 +40,9 @@ var DemoRouter = {
 			    var Application = require(Config.APPLICATION_FILE);
 			    var rootComponentHTML = Application.start(bootstrap);
 			    layoutData.rootComponentHTML = rootComponentHTML;
-			    status = Application.RouteUtils.hasMatch(req.path) ? 200 : 404;
+
+			    var demoUrl = demo.url;
+			    status = Application.RouteUtils.hasDatabaseMatch(url, demo.url) ? 200 : 404;
 			  } else {
 			    status = 200;
 			  }

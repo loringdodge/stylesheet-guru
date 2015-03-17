@@ -32,7 +32,11 @@ var RouteUtils = {
 
   makePath: function(name, params) {
     return router.makePath(name, params);
-  }
+  },
+
+  hasDatabaseMatch: function(path, demo) {
+    return RouteUtils.getPage(path) !== Pages.NOT_FOUND && path === demo;
+  },
 };
 
 module.exports = RouteUtils;

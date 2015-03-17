@@ -10,6 +10,6 @@ module.exports = {
 
   ROUTES: [
     [Pages.HOME, '/'],
-    [Pages.DEMO, '/demo'],
+    [Pages.DEMO, '/demo', '/demo/:url'],
   ]
 };
