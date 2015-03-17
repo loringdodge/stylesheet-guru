@@ -5,61 +5,7 @@ var assign = require('react/lib/Object.assign');
 
 var ActionTypes = AppConstants.ActionTypes;
 
-var _demos = [{
-  "title" : "Speech Bubble",
-  "keywords" : "keyframes"
-}, {
-  "title" : "Speech Bubble",
-  "keywords" : "keyframes"
-}];
-
-var _playerCurrent = 0;
-
-var _playerCode = [{
-  "selector" : ".speech-bubble",
-  "properties" : {
-    "position" : "relative",
-    "width" : "300px",
-    "height" : "200px",
-    "border-radius" : "50%",
-    "background-color" : "#FFD464",
-    "borderColor" : "transparent",
-  }
-},{
-  "selector" : ".speech-bubble:after",
-  "properties" : {
-    "content" : "''",
-    "position" : "absolute",
-    "top" : "98%",
-    "right" : "20%",
-    "width" : "30px",
-    "height" : "30px",
-    "border-radius" : "50%",
-    "background-color" : "#FFD464",
-    "borderColor" : "transparent",
-  },
-},{
-  "selector" : ".speech-bubble:before",
-  "properties" : {
-    "content" : "''",
-    "position":  "absolute",
-    "top" : "110%",
-    "right" : "12%",
-    "width" : "20px",
-    "height" : "20px",
-    "border-radius" : "50%",
-    "background-color" : "#FFD464",
-    "borderColor" : "transparent",
-  }
-}];
-
-var appState = {
-  _demos: _demos,
-  _player: {
-    _playerCurrent: _playerCurrent,
-    _playerCode: _playerCode  
-  }
-};
+var appState = {};
 
 // function reset() {
 //   appState = {};
@@ -76,10 +22,16 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
 
   switch (action.type) {
     case ActionTypes.APP_INITIALIZE:
-      appState = appState;
+      appState = {
+        demo: action.demo,
+        search: action.search,
+        player: {
+          current: 0,
+          code: action.demo.css  
+        }
+      };
 
     case ActionTypes.SWITCH_PAGE:
-      console.log(action);
       appState.page = action.page;
       appState.path = action.path;
       break;
@@ -88,8 +40,8 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       reset();
       break;
 
-    case ActionTypes.GET_DEMOS:
-      appState._demos = action.demos;
+    case ActionTypes.GET_SEARCH:
+      appState.search = action.search;
       break;
 
     default:

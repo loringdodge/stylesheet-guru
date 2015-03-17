@@ -19,11 +19,11 @@ var PlayerTabsCode = React.createClass({
 					<div className="player-tabs-window-container"></div>
 					<div className="player-tabs-window-container">
 						<div className="code-block">
-							{ _.map(this.props._player._playerCode, function(css) {
+							{ _.map(this.props.player.code, function(css) {
 									return (
 										<div>
 											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
+												<div className="code-block-row-number">{++this.props.player.current}</div>
 												<div className="code-block-row-line">
 													<span className="selector">{css.selector}</span>
 													<span className="syntax">&#123;</span>
@@ -32,7 +32,7 @@ var PlayerTabsCode = React.createClass({
 											{ _.map(css.properties, function(value, property) {
 												return (
 													<div className="code-block-row">
-														<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
+														<div className="code-block-row-number">{++this.props.player.current}</div>
 														<div className="code-block-row-line">
 															<span className="property">{property}</span>
 															<span className="syntax">&#58;</span>
@@ -43,7 +43,7 @@ var PlayerTabsCode = React.createClass({
 												);
 											}, this) }
 											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props._player._playerCurrent}</div>
+												<div className="code-block-row-number">{++this.props.player.current}</div>
 												<div className="code-block-row-line">
 													<span className="syntax">&#125;</span>
 												</div> 

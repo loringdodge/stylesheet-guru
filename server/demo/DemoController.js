@@ -20,40 +20,43 @@ var DemoRouter = {
 		var url = req.params.url;
 
 		RethinkUtils.getDemoByUrl(url)
-			.then(function (demo) {
+			.then(function(demo) {
 				var demo = demo[0];
+				
+				RethinkUtils.getDemosByTitle()
+					.then(function(search){
 
-				var bootstrap = {
-		    	path: '/demo',
-		    	demo: demo
-			  };
+						var bootstrap = {
+				    	path: '/demo',
+				    	demo: demo,
+				    	search: search
+					  };
 
-			  console.log(demo);
+					  var layoutData = _.defaults({
+					    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
+					  }, LayoutConfig);
 
-			  var layoutData = _.defaults({
-			    applicationStart: 'Application.start(' + htmlescape(bootstrap) + ');',
-			  }, LayoutConfig);
+					  var status;
 
-			  var status;
+					  if (Config.SSR) {
+					    var Application = require(Config.APPLICATION_FILE);
+					    var rootComponentHTML = Application.start(bootstrap);
+					    layoutData.rootComponentHTML = rootComponentHTML;
 
-			  if (Config.SSR) {
-			    var Application = require(Config.APPLICATION_FILE);
-			    var rootComponentHTML = Application.start(bootstrap);
-			    layoutData.rootComponentHTML = rootComponentHTML;
+					    status = Application.RouteUtils.hasDatabaseMatch(url, demo.url) ? 200 : 404;
+					  } else {
+					    status = 200;
+					  }
 
-			    var demoUrl = demo.url;
-			    status = Application.RouteUtils.hasDatabaseMatch(url, demo.url) ? 200 : 404;
-			  } else {
-			    status = 200;
-			  }
+					  var markup = layout(layoutData);
 
-			  var markup = layout(layoutData);
+					  res.status(status).send(markup);
 
-			  res.status(status).send(markup);
+					})
+					.catch(function (err) {
+						res.status(400).end();
+					});
 			})
-			.catch(function (err) {
-				res.status(400).end();
-			});
 
 	}
 

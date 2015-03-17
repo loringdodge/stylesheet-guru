@@ -15,7 +15,9 @@ var AppActions = {
     var action = {
       type: ActionTypes.APP_INITIALIZE,
       path: path,
-      page: page
+      page: page,
+      demo: bootstrap.demo,
+      search: bootstrap.search
     };
     AppDispatcher.handleServerAction(action);
   },

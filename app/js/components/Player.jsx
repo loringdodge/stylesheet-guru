@@ -15,7 +15,7 @@ var Player = React.createClass({
 		return (
 			<section id="player">
 				<PlayerHeader />
-				<PlayerTabsCode _player={this.props._player} />
+				<PlayerTabsCode player={this.props.player} />
 				<PlayerTabsDemo />
 			</section>
 		);
