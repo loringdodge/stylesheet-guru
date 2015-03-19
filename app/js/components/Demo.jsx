@@ -17,13 +17,11 @@ var HelloWorld = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <main>
         <Header />
-        <main>
-          <Player player={this.props.appState.player} />
-          <SearchResults search={this.props.appState.search} />
-        </main>
-      </div>
+        <Player player={this.props.appState.player} />
+        <SearchResults search={this.props.appState.search} />
+      </main>
     );
   }
 });

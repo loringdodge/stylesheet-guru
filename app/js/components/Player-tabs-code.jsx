@@ -16,7 +16,6 @@ var PlayerTabsCode = React.createClass({
 					<li>HTML</li>
 				</ul>
 				<div className="player-tabs-windows">
-					<div className="player-tabs-window-container"></div>
 					<div className="player-tabs-window-container">
 						<div className="code-block">
 							{ _.map(this.props.player.code, function(css) {

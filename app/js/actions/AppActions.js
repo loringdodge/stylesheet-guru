@@ -5,20 +5,20 @@ var ServerUtils = require('../utils/ServerUtils');
 
 var ActionTypes = AppConstants.ActionTypes;
 var SearchResponse = AppConstants.SearchResponse;
+var _ = require('underscore');
 
 var AppActions = {
 
   initialize: function(bootstrap) {
     if (!bootstrap) bootstrap = {};
-    var path = RouteUtils.getBestAvailablePath(bootstrap);
+    var path = RouteUtils.getBestAvailablePath(bootstrap.path);
     var page = RouteUtils.getPage(path);
+    bootstrap.path = path;
+    bootstrap.page = page;
     var action = {
       type: ActionTypes.APP_INITIALIZE,
-      path: path,
-      page: page,
-      demo: bootstrap.demo,
-      search: bootstrap.search
     };
+    _.extend(action, bootstrap);
     AppDispatcher.handleServerAction(action);
   },
 
@@ -58,10 +58,10 @@ var AppActions = {
 
   getDemosByTitle: function(title) {
     var title = title || '';
-    ServerUtils.getDemosByTitle(title, function(demos){
+    ServerUtils.getDemosByTitle(title, function(search){
         var action = {
-          type: ActionTypes.GET_DEMOS,
-          demos: demos
+          type: ActionTypes.GET_SEARCH,
+          search: search
         };
         AppDispatcher.handleServerAction(action);
       });

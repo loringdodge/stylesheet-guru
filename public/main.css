@@ -196,9 +196,12 @@ ul {
 ul li {
   list-style-type: none;
 }
+.text-size-30px {
+  font-size: 30px;
+}
 .text-size-20px,
 h1 {
-  font-size: 18px;
+  font-size: 20px;
 }
 .text-size-18px,
 h2 {
@@ -385,6 +388,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 body {
   background-color: #f4f4f4;
@@ -397,6 +401,10 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+.react-wrapper {
+  width: 100%;
+  height: inherit;
+}
 header {
   min-width: 100%;
   height: 40px;
@@ -408,13 +416,19 @@ header .header-logo {
 aside#about {
   display: block;
 }
+#demo-wrapper {
+  float: left;
+  width: 100%;
+}
 main {
-  position: relative;
+  float: left;
+  width: 100%;
   height: 100%;
 }
 section#player {
+  float: left;
   width: 100%;
-  height: 600px;
+  height: calc(100% - 40px);
 }
 section#player .player-header {
   position: relative;
@@ -499,7 +513,7 @@ section#player .player-tabs .player-tabs-windows {
   position: relative;
   float: left;
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 75px);
   border-right: 1px solid #e6e6e6;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -509,6 +523,7 @@ section#player .player-tabs .player-tabs-windows {
   -moz-box-shadow: -1px 2px 3px #e6e6e6;
   -webkit-box-shadow: -1px 2px 3px #e6e6e6;
   box-shadow: -1px 2px 3px #e6e6e6;
+  overflow: hidden;
 }
 section#player .player-tabs .player-tabs-windows .player-tabs-window-container {
   position: absolute;
@@ -545,10 +560,12 @@ section#player .player-tabs .player-tabs-windows .player-tabs-window-container .
   transform: translate(-50%, -50%);
 }
 section#search {
-  position: relative;
-  padding-bottom: 20px;
-  width: 100%;
-  overflow: hidden;
+  float: left;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 section#search .search-box {
   float: left;
@@ -571,6 +588,11 @@ section#search .search-results-container {
   float: left;
   padding: 20px;
   width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 section#search .search-results-container .search-result-box {
   float: left;

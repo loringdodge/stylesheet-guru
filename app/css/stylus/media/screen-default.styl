@@ -2,6 +2,7 @@
 html, body
 	width 100%
 	height 100%
+	overflow auto
 	
 body
 	background-color grey-background
@@ -14,6 +15,10 @@ pre
 	white-space pre-wrap
 	word-wrap break-word
 	
+.react-wrapper
+	width 100%
+	height inherit
+
 header
 	min-width 100%
 	height 40px
@@ -25,15 +30,21 @@ header
 aside#about
 	display block
 	
+#demo-wrapper
+	float left
+	width 100%
+	
 main
-	position relative
+	float left
+	width 100%
 	height 100%
 	
 // ********** PLAYER **********
 
 section#player
+	float left
 	width 100%
-	height 600px
+	height calc(100% - 40px)
 
 	// HEADER
 	.player-header
@@ -110,11 +121,12 @@ section#player
 			position relative
 			float left
 			width 100%
-			height calc(100% - 30px)
+			height calc(100% - 75px)
 			border-right 1px solid #E6E6E6
 			box-sizing border-box
 			background-color white
 			box-shadow(-1px 2px 3px #E6E6E6)
+			overflow hidden
 			
 			.player-tabs-window-container
 				position absolute
@@ -147,10 +159,9 @@ section#player
 // ********** SEARCH RESULTS **********
 
 section#search
-	position relative
-	padding-bottom 20px
-	width 100%
-	overflow hidden
+	float left
+	height 100%
+	box-sizing border-box
 	
 	// SEARCH BOX
 		
@@ -159,7 +170,7 @@ section#search
 		padding 0 30px
 		width 100%
 		height 80px
-		box-sizing: border-box;
+		box-sizing border-box
 			
 		.search-box-input
 			margin-top 15px
@@ -174,6 +185,8 @@ section#search
 		float left
 		padding 20px
 		width 100%
+		height 100%
+		box-sizing border-box
 		
 		.search-result-box
 			float left

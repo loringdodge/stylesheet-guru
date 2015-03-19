@@ -6,7 +6,7 @@ module.exports = {
     APP_INITIALIZE: null,
     APP_RESET: null,
     SWITCH_PAGE: null,
-    GET_DEMOS: null
+    GET_SEARCH: null
   }),
 
   PayloadSources: keyMirror({
