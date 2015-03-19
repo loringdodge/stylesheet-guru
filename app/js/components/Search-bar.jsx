@@ -6,7 +6,6 @@ var SearchBar = React.createClass({
 
 	handleChange: function(e) {
 		e.preventDefault();
-		console.log(e.target.value);
     AppActions.getDemosByTitle(e.target.value);
   },
 

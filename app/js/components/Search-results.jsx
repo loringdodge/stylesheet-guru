@@ -14,7 +14,6 @@ var SearchResults = React.createClass({
   },
 
 	render: function() {
-		console.log(this.props);
 		return (
 			<section id="search">
 				<SearchBar />

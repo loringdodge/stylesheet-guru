@@ -11,11 +11,10 @@ var Player = React.createClass({
   },
 
 	render: function() {
-		console.log("Player", this.props)
 		return (
 			<section id="player">
-				<PlayerHeader />
-				<PlayerTabsCode player={this.props.player} />
+				<PlayerHeader demo={this.props.demo} />
+				<PlayerTabsCode demo={this.props.demo} />
 				<PlayerTabsDemo />
 			</section>
 		);

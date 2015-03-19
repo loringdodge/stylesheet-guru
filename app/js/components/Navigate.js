@@ -37,21 +37,18 @@ var Navigate = React.createClass({
       return;
     }
     e.preventDefault();
-    var href = this.state.href;
+    var href = this.props.path;
+    console.log(href);
     var page = this.props.page;
-    var id;
-    if(this.props.ident !== undefined){
-      var id = this.props.ident;
-    }
     if (window.location.pathname !== href) {
       window.history.pushState({}, document.title, href);
     }
-    AppActions.navigateSwitchPage(href, page, id);
+    AppActions.navigateSwitchPage(href, page);
   },
 
   render: function() {
     return React.createElement('a',
-      React.__spread({}, this.props, {onClick: this.onClick, href: this.state.href}),
+      React.__spread({}, this.props, {onClick: this.onClick, href: this.props.path}),
       this.props.children);
   },
 

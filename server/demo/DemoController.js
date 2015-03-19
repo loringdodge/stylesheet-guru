@@ -19,11 +19,10 @@ var DemoRouter = {
 	initializeDemo: function(req, res) {
 		var url = req.params.url;
 
-		RethinkUtils.getDemoByUrl(url)
+		RethinkUtils.findDemoByPath(url)
 			.then(function(demo) {
-				var demo = demo[0];
 				
-				RethinkUtils.getDemosByTitle()
+				RethinkUtils.findDemosByTitle()
 					.then(function(search){
 
 						var bootstrap = {

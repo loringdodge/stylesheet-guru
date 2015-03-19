@@ -19,7 +19,7 @@ var HelloWorld = React.createClass({
     return (
       <main>
         <Header />
-        <Player player={this.props.appState.player} />
+        <Player demo={this.props.appState.demo} />
         <SearchResults search={this.props.appState.search} />
       </main>
     );

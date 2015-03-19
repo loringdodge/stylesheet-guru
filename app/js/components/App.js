@@ -46,7 +46,6 @@ var App = React.createClass({
 
   render: function() {
     var appState = this.state.appState;
-    console.log("appState", appState)
     var PageComponent = getPageComponent(appState.page);
     return React.createElement(PageComponent, {appState: appState});
   }

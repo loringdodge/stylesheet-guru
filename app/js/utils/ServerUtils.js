@@ -9,8 +9,8 @@ var ServerUtils = {
     });
   },
 
-  getDemoById: function(id, callback) {
-    $.get('/api/demo/' + id).then(function(data) {
+  getDemoByPath: function(path, callback) {
+    $.get('/api/demo/' + path).then(function(data) {
       return callback(data);
     });
   }

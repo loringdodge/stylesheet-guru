@@ -4,10 +4,10 @@ var RethinkUtils = require('../db/RethinkUtils');
 
 var ApiController = {
 
-	findDemosByTitle: function(req, res){
+	getDemosByTitle: function(req, res){
 		var title = req.params.title;
 
-		RethinkUtils.getDemosByTitle(title)
+		RethinkUtils.findDemosByTitle(title)
 			.then(function(data){
 				console.log("[INFO] RethinkDB: findDemosByTitle - > Successfully found %s",
 	    		req.title);
@@ -21,10 +21,10 @@ var ApiController = {
 
 	},
 
-	findDemoByUrl: function(req, res){
+	getDemoByPath: function(req, res){
 		var url = req.params.url;
 
-		RethinkUtils.getDemoByUrl(url)
+		RethinkUtils.findDemoByPath(url)
 			.then(function(data){
 				console.log("[INFO] RethinkDB: findDemoByUrl - > Successfully found %s",
 	    		req.id);

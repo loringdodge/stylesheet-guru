@@ -1,8 +1,13 @@
-var properties = require('./Player/properties');
+var properties = require('../Player/Properties');
+var _ = require('underscore');
 
 var PlayerUtils = {
 
 	////////// Core //////////
+
+	extendDemoState : function(obj){
+		return _.extend(obj, { current: 0 });
+	},
 
 	makeTimeline : function(obj){
 		// parse css obj and turn it into a timeline object
