@@ -1,4 +1,5 @@
 var properties = require('../Player/Properties');
+var $ = require('jquery');
 var _ = require('underscore');
 
 var PlayerUtils = {
@@ -6,56 +7,27 @@ var PlayerUtils = {
 	////////// Core //////////
 
 	extendDemoState : function(obj){
-		return _.extend(obj, { current: 0 });
+		return _.extend(obj, { 
+			current: 0,
+			timeline: PlayerUtils.makeTimeline(obj.css)
+		});
 	},
 
-	makeTimeline : function(obj){
+	makeTimeline : function(cssObj){
 		// parse css obj and turn it into a timeline object
-	},
-
-	makeQueue : function(){
-		return $({});
-	},
-
-	makeAnimationFunc : function(step){
-		// creates an animation func with callback
-		return function(){
-    	$(selector).animate({});
-    }
-	},
-
-	makeCssFunc : function(step){
-		// creates a css func with callback
-		return function(){
-    	$(selector).css({});
-    }
-	},
-
-	isValidProperty : function(property){
-		// is the property valid CSS?
-	},
-
-	isValidValue : function(value){
-		// is the value valid CSS?
-	},
-
-	isAnimatable : function(property){
-    // return whether the property can be animated
-	},
-
-	addInitialBorder: function() {
-		// Adds the initial border to an element so it can be seen
-	},
-
-	////////// Additional Features //////////	
-
-	addInitialBorder: function() {
-		// Adds the initial border to an element so it can be seen
-	},
-
-
-
-
+	  var timeline = [];
+	  _.each(cssObj, function(item){
+	  	_.each(item.properties, function(value, property){
+	  		var temp = {
+	  			selector: item.selector,
+	  			property: property,
+	  			value: value
+	  		};
+	  		timeline.push(temp);
+	  	})
+	  });
+	  return timeline;
+	}
 
 }
 
