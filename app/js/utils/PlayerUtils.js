@@ -27,6 +27,34 @@ var PlayerUtils = {
 	  	})
 	  });
 	  return timeline;
+	},
+
+	increaseCurrent : function(current, max){
+		return (current < max) ? ++current : current;
+	},
+
+	decreaseCurrent : function(current){
+		return (current > 0) ? --current : current;
+	},
+
+	play : function(demo){
+		// play animation timeline
+		console.log("Play");
+	},
+
+	pause : function(demo){
+    // pause animation timeline
+    console.log("Pause");
+	},
+
+	next : function(demo){
+    // move one step forward in timeline
+    console.log("Next");
+	},
+
+	back : function(demo){
+    // move one step backward in timeline w/out animation
+ 		console.log("Previous");
 	}
 
 }
