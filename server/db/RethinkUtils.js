@@ -26,9 +26,8 @@ var RethinkUtils = {
 		    .then(function(cursor){
 		      return cursor.toArray();
 		    });
-		} else {
-			return this.findAllDemos();
 		}
+		return this.findAllDemos();
 	},
 
 	findAllDemos: function(){

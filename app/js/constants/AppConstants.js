@@ -6,7 +6,11 @@ module.exports = {
     APP_INITIALIZE: null,
     APP_RESET: null,
     SWITCH_PAGE: null,
-    GET_SEARCH: null
+    GET_SEARCH: null,
+    PLAYER_PLAY: null,
+    PLAYER_PAUSE: null,
+    PLAYER_NEXT: null,
+    PLAYER_BACK: null
   }),
 
   PayloadSources: keyMirror({

@@ -1,85 +1,34 @@
 var PlayerUtils = require('../utils/PlayerUtils');
 var _ = require('underscore');
 
-var Player = function(obj){
+var Player = {
 
-	var status;
+	play : function(demo){
+		// play animation timeline
+		console.log("Play");
+	},
 
-	_.defaults(status, {
-		currentStep: 0,
-		totalSteps: 0,
-		playSpeed: 1000,
-		Q: PlayerUtils.makeQueue(),
-		timeline: PlayerUtils.makeTimeline(obj),
-		cssObject: obj,
-	});
-
-	var getCurrentStep = function(){
-		return status.currentStep;
-	}
-
-	var resetCurrentStep = function(){
-		status.currentStep = 0;
-	}
-
-	var getTotalSteps = function(){
-		return status.totalSteps;
-	}
-
-	var getCssObject = function(){
-		return status.cssObject;
-	}
-
-	var getPlaySpeed = function(){
-		return status.playSpeed;
-	}
-
-	var increasePlaySpeed = function(){
-		if(status.playSpeed > 200) {
-			status.playSpeed -= 200;
-		}
-	}
-
-	var decreasePlaySpeed = function(){
-		if(status.playSpeed < 2000) {
-			status.playSpeed += 200;
-		}
-	}
-
-	var play = function(){
-
-	}
-
-	var pause = function(){
+	pause : function(demo){
     // pause animation timeline
-    Q.stop();
-	}
+    console.log("Pause");
+	},
 
-	var next = function(){
+	next : function(demo){
     // move one step forward in timeline
-    var step = status.timeline[status.currentStep];
-    var func = PlayerUtils.makeAnimationFunc(step);
-    Q.enqueue(func);
-	}
+    if(demo.current < demo.timeline.length){
+    	demo.current++;
+    }
+    console.log("Next", demo.current);
+	},
 
-	var previous = function(){
+	back : function(demo){
     // move one step backward in timeline w/out animation
-    var step = status.timeline[status.currentStep];
+    if(demo.current > 0){
+    	demo.current--;
+    }
+ 		console.log("Previous", demo.current);
 	}
 
-	return {
-		getCurrentStep: getCurrentStep,
-		resetCurrentStep: resetCurrentStep,
-		getTotalSteps: getTotalSteps,
-		getCssObject: getCssObject,
-		getPlaySpeed: getPlaySpeed,
-		increasePlaySpeed: increasePlaySpeed,
-		decreasePlaySpeed: decreasePlaySpeed,
-		play: play,
-		pause: pause,
-		next: next,
-		previous: previous
-	}
 }
 
 module.exports = Player;

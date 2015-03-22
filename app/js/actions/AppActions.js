@@ -2,6 +2,7 @@ var AppConstants = require('../constants/AppConstants');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var RouteUtils = require('../utils/RouteUtils');
 var ServerUtils = require('../utils/ServerUtils');
+var PlayerUtils = require('../utils/PlayerUtils');
 
 var ActionTypes = AppConstants.ActionTypes;
 var SearchResponse = AppConstants.SearchResponse;
@@ -13,8 +14,10 @@ var AppActions = {
     if (!bootstrap) bootstrap = {};
     var path = RouteUtils.getBestAvailablePath(bootstrap.path);
     var page = RouteUtils.getPage(path);
+    var demo = PlayerUtils.extendDemoState(bootstrap.demo);
     bootstrap.path = path;
     bootstrap.page = page;
+    bootstrap.demo = demo;
     var action = {
       type: ActionTypes.APP_INITIALIZE,
     };
@@ -34,7 +37,7 @@ var AppActions = {
           type: ActionTypes.SWITCH_PAGE,
           page: page,
           path: path,
-          demo: demo
+          demo: PlayerUtils.extendDemoState(demo)
         };
         AppDispatcher.handleViewAction(action);
       });
@@ -59,6 +62,40 @@ var AppActions = {
         };
         AppDispatcher.handleServerAction(action);
       });
+  },
+
+  triggerPlay: function(demo) {
+    console.log("Play");
+    var action = {
+      type: ActionTypes.PLAYER_PLAY
+    };
+    AppDispatcher.handleViewAction(action);
+  },
+
+  triggerPause: function(demo) {
+    console.log("Pause");
+    var action = {
+      type: ActionTypes.PLAYER_PAUSE
+    };
+    AppDispatcher.handleViewAction(action);
+  },
+
+  triggerNext: function(demo) {
+    var action = {
+      type: ActionTypes.PLAYER_NEXT,
+      current : PlayerUtils.increaseCurrent(demo.current, demo.timeline.length)
+    };
+    console.log("next", action);
+    AppDispatcher.handleViewAction(action);
+  },
+
+  triggerBack: function(demo) {
+    var action = {
+      type: ActionTypes.PLAYER_BACK,
+      current : PlayerUtils.decreaseCurrent(demo.current)
+    };
+    console.log("back", action);
+    AppDispatcher.handleViewAction(action);
   },
 
 };
