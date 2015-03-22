@@ -6,10 +6,6 @@ var PlayerTabsDemo = require('./Player-tabs-demo.jsx');
 
 var Player = React.createClass({
 
-	propTypes: {
-    appState: React.PropTypes.object.isRequired
-  },
-
 	render: function() {
 		return (
 			<section id="player">

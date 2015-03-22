@@ -1,13 +1,12 @@
 var React = require('react');
 var _ = require('underscore');
 
+var PlayerTabsCodeLine = require('./Player-tabs-code-line.jsx');
+
 var PlayerTabsCode = React.createClass({
 
- 	propTypes: {
-    appState: React.PropTypes.object.isRequired
-  },
-
 	render: function() {
+		var lineNumber = 1;
 		return (
 			<div className="player-tabs code">
 				<ul className="player-tabs-nav">
@@ -20,32 +19,13 @@ var PlayerTabsCode = React.createClass({
 							{ _.map(this.props.demo.css, function(css) {
 									return (
 										<div>
-											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props.demo.current}</div>
-												<div className="code-block-row-line">
-													<span className="selector">{css.selector}</span>
-													<span className="syntax">&#123;</span>
-												</div> 
-											</div>
+											<PlayerTabsCodeLine type={'selector'} selector={css.selector} lineNumber={lineNumber++} />
 											{ _.map(css.properties, function(value, property) {
 												return (
-													<div className="code-block-row">
-														<div className="code-block-row-number">{++this.props.demo.current}</div>
-														<div className="code-block-row-line">
-															<span className="property">{property}</span>
-															<span className="syntax">&#58;</span>
-															<span className="value">{value}</span>
-															<span className="syntax">&#59;</span>
-														</div>
-													</div>
+													<PlayerTabsCodeLine type={'property'} property={property} value={value} lineNumber={lineNumber++} />
 												);
 											}, this) }
-											<div className="code-block-row">
-												<div className="code-block-row-number">{++this.props.demo.current}</div>
-												<div className="code-block-row-line">
-													<span className="syntax">&#125;</span>
-												</div> 
-											</div>
+											<PlayerTabsCodeLine type={'closing'} lineNumber={lineNumber++} />
 									</div>);
 			        }, this) }
 						</div>

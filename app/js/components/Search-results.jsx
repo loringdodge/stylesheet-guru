@@ -9,10 +9,6 @@ var SearchResultsNone = require('./Search-results-none.jsx');
 
 var SearchResults = React.createClass({
 
-	propTypes: {
-    appState: React.PropTypes.object.isRequired
-  },
-
 	render: function() {
 		return (
 			<section id="search">

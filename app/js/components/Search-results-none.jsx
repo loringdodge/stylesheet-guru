@@ -2,10 +2,6 @@ var React = require('react');
 
 var SearchResultsNone = React.createClass({
 
-	propTypes: {
-    appState: React.PropTypes.object.isRequired
-  },
-
 	render: function() {
 		if(this.props.show){
 			return (
