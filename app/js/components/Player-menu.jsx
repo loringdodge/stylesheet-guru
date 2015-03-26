@@ -23,19 +23,16 @@ var PlayerMenu = React.createClass({
 			var pause = that.get('pause');
 
 			Q.queue(function(){
-
 				if(current === timeline.length || pause === true) {
 					return;
 				}
-				AppActions.triggerNext(current, timeline.length);
 				console.log('yes');
 				setTimeout(function() {
 					Q.queue(recurseQueue());
 					Q.dequeue();
 				},1000);
-
+				AppActions.triggerNext(current, timeline.length);
 			});
-
 		}
 
 		recurseQueue();
@@ -45,7 +42,7 @@ var PlayerMenu = React.createClass({
 	pause: function() {
 		console.log('pause');
 		var Q = this.get('q');
-		Q.finish();
+		if(Q !== null) Q.finish();
 		AppActions.triggerPause(Q, true);
 	},
 
@@ -54,18 +51,14 @@ var PlayerMenu = React.createClass({
 		this.pause();
 		var current = this.get('current');
 		var timeline = this.get('timeline');
-		if(current < timeline.length){
-			AppActions.triggerNext(current, timeline.length);
-		}
+		if(current < timeline.length) AppActions.triggerNext(current, timeline.length);
 	},
 
 	back: function() {
 		console.log('back');
 		this.pause();
 		var current = this.get('current');
-		if(current > 0){
-			AppActions.triggerBack(current);
-		}
+		if(current > 0) AppActions.triggerBack(current);
 	},
 
 	render: function() {
