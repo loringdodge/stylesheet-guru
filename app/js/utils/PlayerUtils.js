@@ -1,6 +1,7 @@
-var properties = require('../Player/Properties');
 var $ = require('jquery');
 var _ = require('underscore');
+
+var Properties = require('../Player/Properties');
 
 var PlayerUtils = {
 
@@ -9,19 +10,21 @@ var PlayerUtils = {
 	extendDemoState : function(obj){
 		return _.extend(obj, { 
 			current: 0,
-			timeline: PlayerUtils.makeTimeline(obj.css)
+			timeline: PlayerUtils.makeTimeline(obj.css),
+			q: null,
+			pause: true
 		});
 	},
 
 	makeTimeline : function(cssObj){
-		// parse css obj and turn it into a timeline object
 	  var timeline = [];
 	  _.each(cssObj, function(item){
 	  	_.each(item.properties, function(value, property){
 	  		var temp = {
 	  			selector: item.selector,
 	  			property: property,
-	  			value: value
+	  			value: value,
+	  			func: PlayerUtils.makeAnimationFunc(item.selector, property, value)
 	  		};
 	  		timeline.push(temp);
 	  	})
@@ -37,24 +40,24 @@ var PlayerUtils = {
 		return (current > 0) ? --current : current;
 	},
 
-	play : function(demo){
-		// play animation timeline
-		console.log("Play");
+	makeQueue : function() {
+		return $({});
 	},
 
-	pause : function(demo){
-    // pause animation timeline
-    console.log("Pause");
+	makeAnimationFunc : function(selector, property, value) {
+		var temp = {};
+    temp[property] = value;
+		return function(){
+			$(selector).animate(temp, 1000);
+		}
 	},
 
-	next : function(demo){
-    // move one step forward in timeline
-    console.log("Next");
-	},
-
-	back : function(demo){
-    // move one step backward in timeline w/out animation
- 		console.log("Previous");
+	makeCssFunc : function(selector, property, value) {
+		var temp = {};
+    temp[property] = value;
+		return function(){
+			$(selector).css(temp);
+		}
 	}
 
 }

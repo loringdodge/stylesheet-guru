@@ -6,7 +6,7 @@ var PlayerTabsCodeLine = React.createClass({
 		switch(this.props.type) {
 			case 'selector':
 				return (
-					<div className="code-block-row">
+					<div className="code-block-row highlighted">
 						<div className="code-block-row-number">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="selector">{this.props.selector}</span>

@@ -42,11 +42,13 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       break;
 
     case ActionTypes.PLAYER_PLAY:
-      appState.search = action.search;
+      appState.demo.q = action.q;
+      appState.demo.pause = action.pause;
       break;
 
     case ActionTypes.PLAYER_PAUSE:
-      appState.search = action.search;
+      appState.demo.q = action.q;
+      appState.demo.pause = action.pause;
       break;
 
     case ActionTypes.PLAYER_NEXT:

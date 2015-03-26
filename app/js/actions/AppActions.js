@@ -64,35 +64,37 @@ var AppActions = {
       });
   },
 
-  triggerPlay: function(demo) {
-    console.log("Play");
+  triggerPlay: function(q, pause) {
     var action = {
-      type: ActionTypes.PLAYER_PLAY
+      type: ActionTypes.PLAYER_PLAY,
+      q: q,
+      pause: pause
     };
     AppDispatcher.handleViewAction(action);
   },
 
-  triggerPause: function(demo) {
-    console.log("Pause");
+  triggerPause: function(q, pause) {
     var action = {
-      type: ActionTypes.PLAYER_PAUSE
+      type: ActionTypes.PLAYER_PAUSE,
+      q: q,
+      pause: pause
     };
     AppDispatcher.handleViewAction(action);
   },
 
-  triggerNext: function(demo) {
+  triggerNext: function(current, timelineLength) {
     var action = {
       type: ActionTypes.PLAYER_NEXT,
-      current : PlayerUtils.increaseCurrent(demo.current, demo.timeline.length)
+      current : PlayerUtils.increaseCurrent(current, timelineLength)
     };
     console.log("next", action);
     AppDispatcher.handleViewAction(action);
   },
 
-  triggerBack: function(demo) {
+  triggerBack: function(current) {
     var action = {
       type: ActionTypes.PLAYER_BACK,
-      current : PlayerUtils.decreaseCurrent(demo.current)
+      current : PlayerUtils.decreaseCurrent(current)
     };
     console.log("back", action);
     AppDispatcher.handleViewAction(action);

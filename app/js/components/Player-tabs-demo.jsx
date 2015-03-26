@@ -13,7 +13,7 @@ var PlayerTabsDemo = React.createClass({
 					<div className="player-tabs-window-container"></div>
 				</div>
 			</div>
-		)
+		);
 	}
 
 });

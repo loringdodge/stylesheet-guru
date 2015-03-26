@@ -3,10 +3,8 @@ code-selector-color = #2A452A
 code-property-color = #B22F3D
 code-value-color = #3080A1
 code-syntax-color = black
-code-selector-highlight = #FFFFFF
-code-property-highlight = #FFFFFF
-code-value-highlight = #FFFFFF
-code-syntax-highlight = #FFFFFF
+code-background-highlight = #333
+code-text-highlight = #FFFFFF
 
 // ********** CODE HIGHLIGHTING **********
 .code-block
@@ -53,22 +51,26 @@ code-syntax-highlight = #FFFFFF
 				color code-syntax-color
 				
 		&.highlighted
-			background-color #333
+			display block
+			
+			.code-block-row-number
+				background-color code-background-highlight
+				color code-text-highlight
 				
 			.code-block-row-line
-				background-color #333
+				background-color code-background-highlight
 				
 				.selector
-					color code-selector-highlight
+					color code-text-highlight
 					
 				.property
-					color code-property-highlight
+					color code-text-highlight
 					
 				.value
-					color code-value-highlight
+					color code-text-highlight
 					
 				.syntax
-					color code-syntax-highlight
+					color code-text-highlight
 				
 
 				

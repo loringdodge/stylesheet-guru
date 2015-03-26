@@ -1,22 +1,71 @@
 var React = require('react');
 var AppActions = require('../actions/AppActions');
+var PlayerUtils = require('../utils/PlayerUtils');
+var GetUtils = require('../utils/GetUtils');
 
 var PlayerMenu = React.createClass({
 
+	get: GetUtils,
+
 	play: function() {
-		AppActions.triggerPlay(this.props.demo);
+		console.log('play');
+		var demo = this.get('demo');
+		var Q = this.get('q') || PlayerUtils.makeQueue();
+		var timeline = this.get('timeline');
+
+		AppActions.triggerPlay(Q, false);
+
+		var that = this;
+
+		var recurseQueue = function() {
+			var current = that.get('current');
+			var func = timeline[current];
+			var pause = that.get('pause');
+
+			Q.queue(function(){
+
+				if(current === timeline.length || pause === true) {
+					return;
+				}
+				AppActions.triggerNext(current, timeline.length);
+				console.log('yes');
+				setTimeout(function() {
+					Q.queue(recurseQueue());
+					Q.dequeue();
+				},1000);
+
+			});
+
+		}
+
+		recurseQueue();
+
 	},
 
 	pause: function() {
-		AppActions.triggerPause(this.props.demo);
+		console.log('pause');
+		var Q = this.get('q');
+		Q.finish();
+		AppActions.triggerPause(Q, true);
 	},
 
 	next: function() {
-		AppActions.triggerNext(this.props.demo);
+		console.log('next');
+		this.pause();
+		var current = this.get('current');
+		var timeline = this.get('timeline');
+		if(current < timeline.length){
+			AppActions.triggerNext(current, timeline.length);
+		}
 	},
 
 	back: function() {
-		AppActions.triggerBack(this.props.demo);
+		console.log('back');
+		this.pause();
+		var current = this.get('current');
+		if(current > 0){
+			AppActions.triggerBack(current);
+		}
 	},
 
 	render: function() {
