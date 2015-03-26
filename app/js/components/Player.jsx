@@ -11,7 +11,7 @@ var Player = React.createClass({
 			<section id="player">
 				<PlayerHeader demo={this.props.demo} />
 				<PlayerTabsCode demo={this.props.demo} />
-				<PlayerTabsDemo />
+				<PlayerTabsDemo html={this.props.demo.html} />
 			</section>
 		);
 	}

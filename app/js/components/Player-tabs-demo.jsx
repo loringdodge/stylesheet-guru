@@ -10,7 +10,7 @@ var PlayerTabsDemo = React.createClass({
 					<li>In Progress</li>
 				</ul>
 				<div className="player-tabs-windows">
-					<div className="player-tabs-window-container"></div>
+					<div className="player-tabs-window-container" dangerouslySetInnerHTML={{__html: this.props.html}}></div>
 				</div>
 			</div>
 		);

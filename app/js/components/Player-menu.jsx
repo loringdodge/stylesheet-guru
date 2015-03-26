@@ -19,8 +19,10 @@ var PlayerMenu = React.createClass({
 
 		var recurseQueue = function() {
 			var current = that.get('current');
-			var func = timeline[current];
+			var func = timeline[current]['func'];
 			var pause = that.get('pause');
+
+			console.log(func);
 
 			Q.queue(function(){
 				if(current === timeline.length || pause === true) {
@@ -42,7 +44,7 @@ var PlayerMenu = React.createClass({
 	pause: function() {
 		console.log('pause');
 		var Q = this.get('q');
-		if(Q !== null) Q.finish();
+		if(Q !== null) Q.stop();
 		AppActions.triggerPause(Q, true);
 	},
 
