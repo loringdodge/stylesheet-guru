@@ -36,9 +36,7 @@ var Navigate = React.createClass({
     if (e.metaKey || e.shiftKey || e.altKey || e.ctrlKey) {
       return;
     }
-    e.preventDefault();
     var href = this.props.path;
-    console.log(href);
     var page = this.props.page;
     if (window.location.pathname !== href) {
       window.history.pushState({}, document.title, href);
