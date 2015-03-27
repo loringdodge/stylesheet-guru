@@ -26,6 +26,12 @@ code-text-highlight = #FFFFFF
 			font-size 10px
 			border-right 1px solid #D6D6D6
 			background-color #F4F4F4
+			-webkit-user-select: none; /* Chrome/Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+ */
+			/* Rules below not implemented in browsers yet */
+			-o-user-select: none;
+			user-select: none;
 			
 		.code-block-row-line
 			width calc(100% - 70px)
@@ -55,6 +61,7 @@ code-text-highlight = #FFFFFF
 				
 			.code-block-row-line
 				background-color code-background-highlight
+				transition(background-color .02s)
 				
 				.selector
 					color code-text-highlight
@@ -67,6 +74,11 @@ code-text-highlight = #FFFFFF
 					
 				.syntax
 					color code-text-highlight
+					
+.code-html-default
+	width 25px
+	height 25px
+	border 1px solid black
 				
 
 				

@@ -3,12 +3,19 @@ var ClassUtils = require('../utils/ClassUtils');
 
 var PlayerTabsCodeLine = React.createClass({
 
+	componentDidMount: function() {
+		var component = React.findDOMNode(this);
+		var offsetHeight = component.offsetHeight;
+		var offsetTop = component.offsetTop;
+		console.log(offsetTop + offsetHeight);
+	},
+
 	render: function() {
 		switch(this.props.type) {
 			case 'selector':
 				return (
 					<div className="code-block-row">
-						<div className="code-block-row-number">{this.props.lineNumber}</div>
+						<div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="selector">{this.props.selector}</span>
 							<span className="syntax">&#123;</span>
@@ -23,7 +30,7 @@ var PlayerTabsCodeLine = React.createClass({
 				});
 				return (
 					<div className={classes}>
-						<div className="code-block-row-number">{this.props.lineNumber}</div>
+						<div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="property">{this.props.property}</span>
 							<span className="syntax">&#58;</span>
@@ -36,7 +43,7 @@ var PlayerTabsCodeLine = React.createClass({
 			case 'closing':
 				return (
 					<div className="code-block-row">
-						<div className="code-block-row-number">{this.props.lineNumber}</div>
+						<div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="syntax">&#125;</span>
 						</div> 

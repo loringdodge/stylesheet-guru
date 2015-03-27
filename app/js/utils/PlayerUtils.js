@@ -61,6 +61,20 @@ var PlayerUtils = {
 		return function(){
 			$(selector).css(temp);
 		}
+	},
+
+	hasReachedTop : function(height, parent, padding){
+		var padding = padding || 40;
+		return (height + padding) > parent;
+	},
+
+	hasReachedBottom : function(height, parent, padding){
+		var padding = padding || 40;
+		return (height + padding) > parent;
+	},
+
+	scrollParent : function(child, parent, padding){
+		if(PlayerUtils.hasReachedTop) parent.scrollBy(0, padding);
 	}
 
 }

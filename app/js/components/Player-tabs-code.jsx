@@ -8,6 +8,13 @@ var PlayerTabsCode = React.createClass({
 
 	get: GetUtils,
 
+	componentDidMount: function() {
+		var component = React.findDOMNode(this.refs.codeContainer);
+		var offsetHeight = component.offsetHeight;
+		var offsetTop = component.offsetTop;
+		console.log(component);
+	},
+
 	render: function() {
 		var lineNumber = 1;
 		var index = -1;
@@ -20,7 +27,7 @@ var PlayerTabsCode = React.createClass({
 				</ul>
 				<div className="player-tabs-windows">
 					<div className="player-tabs-window-container">
-						<div className="code-block">
+						<div className="code-block" ref="codeContainer">
 							{ _.map(this.get('css'), function(css) {
 									return (
 										<div>
