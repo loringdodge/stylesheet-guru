@@ -7,6 +7,7 @@ var PlayerTabsCode = React.createClass({
 
 	render: function() {
 		var lineNumber = 1;
+	  var highlighted = this.props.demo.current === lineNumber;
 		return (
 			<div className="player-tabs code">
 				<ul className="player-tabs-nav">
@@ -22,7 +23,7 @@ var PlayerTabsCode = React.createClass({
 											<PlayerTabsCodeLine type={'selector'} selector={css.selector} lineNumber={lineNumber++} />
 											{ _.map(css.properties, function(value, property) {
 												return (
-													<PlayerTabsCodeLine type={'property'} property={property} value={value} lineNumber={lineNumber++} />
+													<PlayerTabsCodeLine highlighted={highlighted} type={'property'} property={property} value={value} lineNumber={lineNumber++} />
 												);
 											}, this) }
 											<PlayerTabsCodeLine type={'closing'} lineNumber={lineNumber++} />

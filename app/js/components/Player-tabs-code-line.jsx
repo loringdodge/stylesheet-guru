@@ -1,4 +1,5 @@
 var React = require('react');
+var ClassUtils = require('../utils/ClassUtils');
 
 var PlayerTabsCodeLine = React.createClass({
 
@@ -6,7 +7,7 @@ var PlayerTabsCodeLine = React.createClass({
 		switch(this.props.type) {
 			case 'selector':
 				return (
-					<div className="code-block-row highlighted">
+					<div className="code-block-row">
 						<div className="code-block-row-number">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="selector">{this.props.selector}</span>
@@ -16,8 +17,12 @@ var PlayerTabsCodeLine = React.createClass({
 				);
 
 			case 'property':
+				var classes = ClassUtils({
+					'code-block-row': true,
+					'highlighted': this.props.highlighted
+				});
 				return (
-					<div className="code-block-row">
+					<div className={classes}>
 						<div className="code-block-row-number">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="property">{this.props.property}</span>
