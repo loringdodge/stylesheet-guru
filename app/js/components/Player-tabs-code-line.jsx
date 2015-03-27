@@ -19,7 +19,7 @@ var PlayerTabsCodeLine = React.createClass({
 			case 'property':
 				var classes = ClassUtils({
 					'code-block-row': true,
-					'highlighted': this.props.highlighted
+					'highlighted': this.props.current === this.props.index
 				});
 				return (
 					<div className={classes}>

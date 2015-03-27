@@ -369,10 +369,6 @@ h4 {
 .code-block .code-block-row.highlighted {
   display: block;
 }
-.code-block .code-block-row.highlighted .code-block-row-number {
-  background-color: #333;
-  color: #fff;
-}
 .code-block .code-block-row.highlighted .code-block-row-line {
   background-color: #333;
 }

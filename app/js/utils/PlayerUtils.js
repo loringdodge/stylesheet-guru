@@ -18,15 +18,18 @@ var PlayerUtils = {
 
 	makeTimeline : function(cssObj){
 	  var timeline = [];
+	  var index = 0;
 	  _.each(cssObj, function(item){
 	  	_.each(item.properties, function(value, property){
 	  		var temp = {
+	  			id: index,
 	  			selector: item.selector,
 	  			property: property,
 	  			value: value,
 	  			func: PlayerUtils.makeAnimationFunc(item.selector, property, value)
 	  		};
 	  		timeline.push(temp);
+	  		index++;
 	  	})
 	  });
 	  return timeline;
