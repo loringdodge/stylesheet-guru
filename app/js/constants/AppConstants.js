@@ -10,7 +10,9 @@ module.exports = {
     PLAYER_PLAY: null,
     PLAYER_PAUSE: null,
     PLAYER_NEXT: null,
-    PLAYER_BACK: null
+    PLAYER_BACK: null,
+    UPDATE_CODEPANEL_PARENT: null,
+    UPDATE_CODEPANEL_CHILD: null
   }),
 
   PayloadSources: keyMirror({

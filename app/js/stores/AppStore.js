@@ -59,6 +59,15 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       appState.demo.current = action.current;
       break;
 
+    case ActionTypes.UPDATE_CODEPANEL_PARENT:
+      appState.demo.codePanel.parentNode = action.codePanel.parentNode;
+      appState.demo.codePanel.parentHeight = action.codePanel.parentHeight;
+      break;
+
+    case ActionTypes.UPDATE_CODEPANEL_CHILD:
+      appState.demo.codePanel.childTop = action.childTop;
+      break;
+
     default:
       return;
   }

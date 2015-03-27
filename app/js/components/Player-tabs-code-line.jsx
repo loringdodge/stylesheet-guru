@@ -1,13 +1,21 @@
 var React = require('react');
+var AppActions = require('../actions/AppActions');
 var ClassUtils = require('../utils/ClassUtils');
 
 var PlayerTabsCodeLine = React.createClass({
 
-	componentDidMount: function() {
-		var component = React.findDOMNode(this);
-		var offsetHeight = component.offsetHeight;
-		var offsetTop = component.offsetTop;
-		console.log(offsetTop + offsetHeight);
+	componentDidUpdate: function() {
+		if(this.props.type === 'property' && this.props.current === this.props.index){
+			var childNode = React.findDOMNode(this);
+			var offsetHeight = childNode.offsetHeight;
+			var offsetTop = childNode.offsetTop;
+
+			var parentNode = this.props.codePanel.parentNode;
+			var parentHeight = this.props.codePanel.parentHeight;
+			if((offsetHeight + offsetTop + 40) > parentHeight){
+				$(parentNode).animate({ scrollTop: parentHeight + 40}, 3000);
+			}
+		}
 	},
 
 	render: function() {

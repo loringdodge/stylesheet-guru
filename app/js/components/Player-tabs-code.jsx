@@ -1,5 +1,6 @@
 var React = require('react');
 var _ = require('underscore');
+var AppActions = require('../actions/AppActions');
 var GetUtils = require('../utils/GetUtils');
 
 var PlayerTabsCodeLine = require('./Player-tabs-code-line.jsx');
@@ -10,12 +11,12 @@ var PlayerTabsCode = React.createClass({
 
 	componentDidMount: function() {
 		var component = React.findDOMNode(this.refs.codeContainer);
-		var offsetHeight = component.offsetHeight;
-		var offsetTop = component.offsetTop;
-		console.log(component);
+		var parentHeight = component.offsetHeight;
+		AppActions.updateCodePanelParent(component, parentHeight);
 	},
 
 	render: function() {
+		var codePanel = this.get('codePanel');
 		var lineNumber = 1;
 		var index = -1;
 		var current = this.get('current');
@@ -30,12 +31,12 @@ var PlayerTabsCode = React.createClass({
 						<div className="code-block" ref="codeContainer">
 							{ _.map(this.get('css'), function(css) {
 									return (
-										<div>
+										<div >
 											<PlayerTabsCodeLine type={'selector'} selector={css.selector} lineNumber={lineNumber++} />
 											{ _.map(css.properties, function(value, property) {
 												index++;
 												return (
-													<PlayerTabsCodeLine current={current} index={index} type={'property'} property={property} value={value} lineNumber={lineNumber++} />
+													<PlayerTabsCodeLine current={current} index={index} codePanel={codePanel} type={'property'} property={property} value={value} lineNumber={lineNumber++} />
 												);
 											}, this) }
 											<PlayerTabsCodeLine type={'closing'} lineNumber={lineNumber++} />

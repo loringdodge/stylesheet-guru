@@ -87,7 +87,6 @@ var AppActions = {
       type: ActionTypes.PLAYER_NEXT,
       current : PlayerUtils.increaseCurrent(current, timelineLength)
     };
-    console.log("next", action);
     AppDispatcher.handleViewAction(action);
   },
 
@@ -96,7 +95,27 @@ var AppActions = {
       type: ActionTypes.PLAYER_BACK,
       current : PlayerUtils.decreaseCurrent(current)
     };
-    console.log("back", action);
+    AppDispatcher.handleViewAction(action);
+  },
+
+  updateCodePanelParent: function(node, height) {
+    var action = {
+      type: ActionTypes.UPDATE_CODEPANEL_PARENT,
+      codePanel:{
+        parentNode: node,
+        parentHeight: height
+      }
+    };
+    console.log(action);
+    AppDispatcher.handleViewAction(action);
+  },
+
+  updateCodePanelChild: function(childTop) {
+    console.log(childTop);
+    var action = {
+      type: ActionTypes.UPDATE_CODEPANEL_CHILD,
+      childTop: childTop
+    };
     AppDispatcher.handleViewAction(action);
   },
 

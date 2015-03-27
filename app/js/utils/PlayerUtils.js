@@ -12,7 +12,12 @@ var PlayerUtils = {
 			current: 0,
 			timeline: PlayerUtils.makeTimeline(obj.css),
 			q: null,
-			pause: true
+			pause: true,
+      codePanel:{
+        parentNode: {},
+        parentHeight: null,
+        scrollPadding: 40
+      }
 		});
 	},
 
