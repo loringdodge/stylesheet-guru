@@ -29,7 +29,7 @@ var PlayerMenu = React.createClass({
 
 				console.log('yes');
 				var temp = {};
-		    temp[timeline[current]['property']] = timeline[current]['value'];
+				temp[timeline[current]['property']] = timeline[current]['value'];
 				$(timeline[current]['selector']).animate(temp, {
 					duration: 1000,
 					complete: function(){
@@ -41,11 +41,6 @@ var PlayerMenu = React.createClass({
 						AppActions.setCurrent(PlayerUtils.decreaseCurrent(current));
 					}
 				});
-
-				// setTimeout(function() {
-				// 	Q.queue(recurseQueue());
-				// 	Q.dequeue();
-				// },1000);
 			});
 		}
 
