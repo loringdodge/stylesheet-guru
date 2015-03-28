@@ -82,22 +82,6 @@ var AppActions = {
     AppDispatcher.handleViewAction(action);
   },
 
-  triggerNext: function(current, timelineLength) {
-    var action = {
-      type: ActionTypes.PLAYER_NEXT,
-      current : PlayerUtils.increaseCurrent(current, timelineLength)
-    };
-    AppDispatcher.handleViewAction(action);
-  },
-
-  triggerBack: function(current) {
-    var action = {
-      type: ActionTypes.PLAYER_BACK,
-      current : PlayerUtils.decreaseCurrent(current)
-    };
-    AppDispatcher.handleViewAction(action);
-  },
-
   setCurrent: function(current){
     var action = {
       type: ActionTypes.SET_CURRENT,
@@ -116,16 +100,7 @@ var AppActions = {
     };
     console.log(action);
     AppDispatcher.handleViewAction(action);
-  },
-
-  updateCodePanelChild: function(childTop) {
-    console.log(childTop);
-    var action = {
-      type: ActionTypes.UPDATE_CODEPANEL_CHILD,
-      childTop: childTop
-    };
-    AppDispatcher.handleViewAction(action);
-  },
+  }
 
 };
 

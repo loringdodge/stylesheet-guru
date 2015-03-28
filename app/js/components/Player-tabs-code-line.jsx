@@ -1,5 +1,6 @@
 var React = require('react');
 var AppActions = require('../actions/AppActions');
+var PlayerUtils = require('../utils/PlayerUtils');
 var ClassUtils = require('../utils/ClassUtils');
 var GetUtils = require('../utils/GetUtils');
 
@@ -13,9 +14,9 @@ var PlayerTabsCodeLine = React.createClass({
 			var childNode = React.findDOMNode(this);
 			var offsetHeight = childNode.offsetHeight;
 			var offsetTop = childNode.offsetTop;
-
 			var parentNode = this.props.codePanel.parentNode;
 			var parentHeight = this.props.codePanel.parentHeight;
+			
 			if((offsetHeight + offsetTop + 40) > parentHeight){
 				$(parentNode).animate({ scrollTop: parentHeight}, 1000, 'easeInCirc');
 			}

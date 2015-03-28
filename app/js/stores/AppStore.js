@@ -26,6 +26,7 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
         demo: action.demo,
         search: action.search
       };
+      console.log(appState);
 
     case ActionTypes.SWITCH_PAGE:
       appState.page = action.page,

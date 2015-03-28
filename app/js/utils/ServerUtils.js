@@ -1,5 +1,3 @@
-
-
 var ServerUtils = {
 
 	getDemosByTitle: function(title, callback) {

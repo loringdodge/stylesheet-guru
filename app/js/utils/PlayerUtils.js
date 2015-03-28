@@ -1,11 +1,10 @@
 var $ = require('jquery');
 var _ = require('underscore');
+var HTML = require('html-parse-stringify');
 
 var Properties = require('../Player/Properties');
 
 var PlayerUtils = {
-
-	////////// Core //////////
 
 	extendDemoState : function(obj){
 		return _.extend(obj, { 
@@ -17,10 +16,12 @@ var PlayerUtils = {
         parentNode: {},
         parentHeight: null,
         scrollPadding: 40
-      }
+      },
+      html: PlayerUtils.addClassesToElements(HTML.parse(obj.html), 'code-html-default')
 		});
 	},
 
+	// PlayerUtils.addClassesToElements(HTML.parse(obj.html))
 	makeTimeline : function(cssObj){
 	  var timeline = [];
 	  var index = 0;
@@ -68,18 +69,18 @@ var PlayerUtils = {
 		}
 	},
 
-	hasReachedTop : function(height, parent, padding){
-		var padding = padding || 40;
-		return (height + padding) > parent;
+	addClassesToString : function(string, classes){
+		return _.reduce(classes, function(acc, str){
+			return acc += (' ' + str);
+		}, string);	
 	},
 
-	hasReachedBottom : function(height, parent, padding){
-		var padding = padding || 40;
-		return (height + padding) > parent;
-	},
-
-	scrollParent : function(child, parent, padding){
-		if(PlayerUtils.hasReachedTop) parent.scrollBy(0, padding);
+	addClassesToElements : function(obj){
+		var classes = Array.prototype.slice.call(arguments, 1);
+		return _.map(obj, function(element){
+			element.attrs.class = PlayerUtils.addClassesToString(element.attrs.class, classes);
+			return element;
+		})	
 	}
 
 }

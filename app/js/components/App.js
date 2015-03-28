@@ -8,7 +8,7 @@ var Pages = AppConstants.Pages;
 
 function getPageComponent(page) {
   switch (page) {
-    case Pages.HOME:        return require('./Home.jsx');
+    case Pages.HOME: return require('./Home.jsx');
     case Pages.DEMO: return require('./Demo.jsx');
     case Pages.NOT_FOUND:   return require('./NotFound');
     default:

@@ -33,7 +33,7 @@ var PlayerMenu = React.createClass({
 					Q.queue(recurseQueue());
 					Q.dequeue();
 				},1000);
-				AppActions.triggerNext(current, timeline.length);
+				AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
 			});
 		}
 

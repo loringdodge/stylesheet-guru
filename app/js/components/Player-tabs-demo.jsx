@@ -1,6 +1,14 @@
 var React = require('react');
+var GetUtils = require('../utils/GetUtils');
 
 var PlayerTabsDemo = React.createClass({
+
+	get: GetUtils,
+
+	componentWillMount: function () {
+		var htmlObj = this.get('html');
+	  // console.log(HTML.parse(htmlObj));  
+	},
 
 	render: function() {
 		return (
