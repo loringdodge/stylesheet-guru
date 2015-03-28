@@ -1,226 +1,226 @@
 // ********** Default Screen **********
 html, body
-	width 100%
-	height 100%
-	overflow auto
-	
+  width 100%
+  height 100%
+  overflow auto
+
 body
-	background-color grey-background
-	font-family roboto
-	
-pre 
-	white-space -moz-pre-wrap
-	white-space -pre-wrap
-	white-space -o-pre-wrap
-	white-space pre-wrap
-	word-wrap break-word
-	
+  background-color grey-background
+  font-family roboto
+
+pre
+  white-space -moz-pre-wrap
+  white-space -pre-wrap
+  white-space -o-pre-wrap
+  white-space pre-wrap
+  word-wrap break-word
+
 .react-wrapper
-	width 100%
-	height inherit
+  width 100%
+  height inherit
 
 header
-	min-width 100%
-	height 40px
-	
-	.header-logo
-		margin 0
-		line-height 40px
-	
+  min-width 100%
+  height 40px
+
+  .header-logo
+    margin 0
+    line-height 40px
+
 aside#about
-	display block
-	
+  display block
+
 #demo-wrapper
-	float left
-	width 100%
-	
+  float left
+  width 100%
+
 main
-	float left
-	width 100%
-	height 100%
-	
+  float left
+  width 100%
+  height 100%
+
 // ********** PLAYER **********
 
 section#player
-	float left
-	width 100%
-	height calc(100% - 40px)
+  float left
+  width 100%
+  height calc(100% - 40px)
 
-	// HEADER
-	.player-header
-		position relative
-		float left
-		width 100%
-		min-height 40px
-		
-		.player-header-title
-			float left
-			margin 0 10px 0 15px
-			line-height 40px
-			
-		.player-header-desc
-			float left
-			margin 0
-			line-height 40px
-	
-	// MENU / PLAYER BUTTONS
-	.player-menu
-		float left
-		width 25%
-		height 40px
-		
-		.btn
-			float left
-			
-	.player-tabs
-		float left
-		height 100%
-		background-color grey-background
-		
-		&.code
-			width 25%
-			
-		&.demo
-			width 75%
+  // HEADER
+  .player-header
+    position relative
+    float left
+    width 100%
+    min-height 40px
 
-		.player-tabs-nav
-			float left
-			width 100%
-			height 30px
-			border-bottom 1px solid #CCC
-			box-shadow(inset 1px -1px 3px #E6E6E6)
-			
-			li
-				float left
-				margin-right 2px
-				padding 0px 20px
-				height 30px
-				font-size 12px
-				line-height 30px
-				text-align center
-				cursor pointer
-				display inline-block
-				border-radius(5px 5px 0 0)
-				
-				&:hover
-					color white
-					background-color #333333
-					
-				&.selected
-					height 31px
-					color #333
-					font-weight 700
-					background-color white
-					border-top 1px solid #E6E6E6
-					border-right 1px solid #CCC
-					cursor auto
-					border-radius(5px 5px 0 0)
-					box-shadow(1px -3px 3px #E6E6E6)
-					
-		.player-tabs-windows
-			position relative
-			float left
-			width 100%
-			height calc(100% - 75px)
-			border-right 1px solid #E6E6E6
-			box-sizing border-box
-			background-color white
-			box-shadow(-1px 2px 3px #E6E6E6)
-			overflow hidden
-			
-			.player-tabs-window-container
-				position absolute
-				top 0
-				left 0
-				padding 15px
-				width 100%
-				height 100%
-				box-sizing border-box
-				
-				form
-					width 100%
-					height 100%
-					
-					textarea
-						width 100%
-						height 100%
-						
-				.highlight
-					margin-top 0
-					
-				.highlight code
-					height 100%
-				
-				.absolute-center
-					position absolute
-					top calc(50% - 30px)
-					left 50%
-					transform translate(-50%, -50%)
-	
+    .player-header-title
+      float left
+      margin 0 10px 0 15px
+      line-height 40px
+
+    .player-header-desc
+      float left
+      margin 0
+      line-height 40px
+
+  // MENU / PLAYER BUTTONS
+  .player-menu
+    float left
+    width 25%
+    height 40px
+
+    .btn
+      float left
+
+  .player-tabs
+    float left
+    height 100%
+    background-color grey-background
+
+    &.code
+      width 25%
+
+    &.demo
+      width 75%
+
+    .player-tabs-nav
+      float left
+      width 100%
+      height 30px
+      border-bottom 1px solid #CCC
+      box-shadow(inset 1px -1px 3px #E6E6E6)
+
+      li
+        float left
+        margin-right 2px
+        padding 0px 20px
+        height 30px
+        font-size 12px
+        line-height 30px
+        text-align center
+        cursor pointer
+        display inline-block
+        border-radius(5px 5px 0 0)
+
+        &:hover
+          color white
+          background-color #333333
+
+        &.selected
+          height 31px
+          color #333
+          font-weight 700
+          background-color white
+          border-top 1px solid #E6E6E6
+          border-right 1px solid #CCC
+          cursor auto
+          border-radius(5px 5px 0 0)
+          box-shadow(1px -3px 3px #E6E6E6)
+
+    .player-tabs-windows
+      position relative
+      float left
+      width 100%
+      height calc(100% - 75px)
+      border-right 1px solid #E6E6E6
+      box-sizing border-box
+      background-color white
+      box-shadow(-1px 2px 3px #E6E6E6)
+      overflow hidden
+
+      .player-tabs-window-container
+        position absolute
+        top 0
+        left 0
+        padding 15px
+        width 100%
+        height 100%
+        box-sizing border-box
+
+        form
+          width 100%
+          height 100%
+
+          textarea
+            width 100%
+            height 100%
+
+        .highlight
+          margin-top 0
+
+        .highlight code
+          height 100%
+
+        .absolute-center
+          position absolute
+          top calc(50% - 30px)
+          left 50%
+          transform translate(-50%, -50%)
+
 // ********** SEARCH RESULTS **********
 
 section#search
-	float left
-	min-width 100%
-	height 100%
-	box-sizing border-box
-	
-	// SEARCH BOX
-		
-	.search-box
-		float left
-		padding 0 30px
-		width 100%
-		height 80px
-		box-sizing border-box
-			
-		.search-box-input
-			margin-top 15px
-			padding 0 10px
-			height 60%
-			width 95%	
-			border none
-			
-	// SEARCH RESULTS
-			
-	.search-results-container
-		float left
-		padding 20px
-		width 100%
-		min-height 100%
-		box-sizing border-box
-		
-		.search-result-box
-			float left
-			margin 0px 20px 20px 0px
-			width 250px
-			overflow hidden
-			box-sizing border-box
-			
-			&:hover
-				cursor pointer
-			
-			&:hover .search-result-box-overlay
-				background-color #333
-				color white
-				
-			&:hover h4
-				color #CCC
-			
-			.search-result-box-img
-				float left
-				max-width 250px
-				
-			.search-result-box-overlay
-				float left
-				padding 20px 15px
-				width 100%
-				height 70px
-				box-sizing border-box
-				
-				h4
-					padding-top 4px
+  float left
+  min-width 100%
+  height 100%
+  box-sizing border-box
 
-	
+  // SEARCH BOX
+
+  .search-box
+    float left
+    padding 0 30px
+    width 100%
+    height 80px
+    box-sizing border-box
+
+    .search-box-input
+      margin-top 15px
+      padding 0 10px
+      height 60%
+      width 95%
+      border none
+
+  // SEARCH RESULTS
+
+  .search-results-container
+    float left
+    padding 20px
+    width 100%
+    min-height 100%
+    box-sizing border-box
+
+    .search-result-box
+      float left
+      margin 0px 20px 20px 0px
+      width 250px
+      overflow hidden
+      box-sizing border-box
+
+      &:hover
+        cursor pointer
+
+      &:hover .search-result-box-overlay
+        background-color #333
+        color white
+
+      &:hover h4
+        color #CCC
+
+      .search-result-box-img
+        float left
+        max-width 250px
+
+      .search-result-box-overlay
+        float left
+        padding 20px 15px
+        width 100%
+        height 70px
+        box-sizing border-box
+
+        h4
+          padding-top 4px
+
+
 
 
