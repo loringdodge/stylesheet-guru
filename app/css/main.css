@@ -394,6 +394,12 @@ h4 {
 .code-block .code-block-row.highlighted .code-block-row-line .syntax {
   color: #fff;
 }
+.code-block .code-block-row.clickable {
+  cursor: pointer;
+}
+.code-block .code-block-row.clickable:hover .code-block-row-line {
+  background-color: #f4f4f4;
+}
 .code-html-default {
   width: 25px;
   height: 25px;

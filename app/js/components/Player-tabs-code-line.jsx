@@ -1,10 +1,14 @@
 var React = require('react');
 var AppActions = require('../actions/AppActions');
 var ClassUtils = require('../utils/ClassUtils');
+var GetUtils = require('../utils/GetUtils');
 
 var PlayerTabsCodeLine = React.createClass({
 
+	get: GetUtils,
+
 	componentDidUpdate: function() {
+
 		if(this.props.type === 'property' && this.props.current === this.props.index){
 			var childNode = React.findDOMNode(this);
 			var offsetHeight = childNode.offsetHeight;
@@ -13,9 +17,16 @@ var PlayerTabsCodeLine = React.createClass({
 			var parentNode = this.props.codePanel.parentNode;
 			var parentHeight = this.props.codePanel.parentHeight;
 			if((offsetHeight + offsetTop + 40) > parentHeight){
-				$(parentNode).animate({ scrollTop: parentHeight + 40}, 3000);
+				$(parentNode).animate({ scrollTop: parentHeight}, 1000, 'easeInCirc');
+			}
+			if((offsetTop) <= 65){
+				$(parentNode).animate({ scrollTop: offsetTop - 65}, 1000, 'easeOutCirc');
 			}
 		}
+	},
+
+	handleClick: function() {
+		AppActions.setCurrent(this.props.index);
 	},
 
 	render: function() {
@@ -32,12 +43,14 @@ var PlayerTabsCodeLine = React.createClass({
 				);
 
 			case 'property':
+				var isHighlighted = this.props.current === this.props.index;
 				var classes = ClassUtils({
 					'code-block-row': true,
-					'highlighted': this.props.current === this.props.index
+					'highlighted': isHighlighted,
+					'clickable': !isHighlighted ? true : false
 				});
 				return (
-					<div className={classes}>
+					<div className={classes} onClick={this.handleClick}>
 						<div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
 						<div className="code-block-row-line">
 							<span className="property">{this.props.property}</span>

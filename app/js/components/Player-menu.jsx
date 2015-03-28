@@ -53,14 +53,14 @@ var PlayerMenu = React.createClass({
 		this.pause();
 		var current = this.get('current');
 		var timeline = this.get('timeline');
-		if(current < timeline.length) AppActions.triggerNext(current, timeline.length);
+		if(current < timeline.length) AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
 	},
 
 	back: function() {
 		console.log('back');
 		this.pause();
 		var current = this.get('current');
-		if(current > 0) AppActions.triggerBack(current);
+		if(current > 0) AppActions.setCurrent(PlayerUtils.decreaseCurrent(current));
 	},
 
 	render: function() {

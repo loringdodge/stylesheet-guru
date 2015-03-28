@@ -98,6 +98,14 @@ var AppActions = {
     AppDispatcher.handleViewAction(action);
   },
 
+  setCurrent: function(current){
+    var action = {
+      type: ActionTypes.SET_CURRENT,
+      current : current
+    };
+    AppDispatcher.handleViewAction(action);
+  },
+
   updateCodePanelParent: function(node, height) {
     var action = {
       type: ActionTypes.UPDATE_CODEPANEL_PARENT,
