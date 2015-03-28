@@ -4,10 +4,10 @@ var AppActions = require('../actions/AppActions');
 
 var SearchBar = React.createClass({
 
-	handleChange: function(e) {
-		e.preventDefault();
-		AppActions.getDemosByTitle(e.target.value);
-	},
+  handleChange: function(e) {
+    e.preventDefault();
+    AppActions.getDemosByTitle(e.target.value);
+  },
 
 	render: function() {
 		return (
