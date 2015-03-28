@@ -1,4 +1,5 @@
 var React = require('react');
+var HTML = require('html-parse-stringify');
 var GetUtils = require('../utils/GetUtils');
 
 var PlayerTabsDemo = React.createClass({
@@ -6,8 +7,7 @@ var PlayerTabsDemo = React.createClass({
 	get: GetUtils,
 
 	componentWillMount: function () {
-		var htmlObj = this.get('html');
-	  // console.log(HTML.parse(htmlObj));  
+ 
 	},
 
 	render: function() {
@@ -18,7 +18,7 @@ var PlayerTabsDemo = React.createClass({
 					<li>In Progress</li>
 				</ul>
 				<div className="player-tabs-windows">
-					<div className="player-tabs-window-container" dangerouslySetInnerHTML={{__html: this.props.html}}></div>
+					<div className="player-tabs-window-container" dangerouslySetInnerHTML={{__html: HTML.stringify(this.props.html)}}></div>
 				</div>
 			</div>
 		);

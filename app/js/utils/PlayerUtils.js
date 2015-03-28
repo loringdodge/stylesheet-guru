@@ -80,7 +80,8 @@ var PlayerUtils = {
 		return _.map(obj, function(element){
 			element.attrs.class = PlayerUtils.addClassesToString(element.attrs.class, classes);
 			return element;
-		})	
+		})
+			
 	}
 
 }

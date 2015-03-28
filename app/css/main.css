@@ -403,7 +403,7 @@ h4 {
 .code-html-default {
   width: 25px;
   height: 25px;
-  border: 1px solid #000;
+  border: 3px solid #000;
 }
 html,
 body {
@@ -550,6 +550,7 @@ section#player .player-tabs .player-tabs-windows .player-tabs-window-container {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 15px;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;

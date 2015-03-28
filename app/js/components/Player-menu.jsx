@@ -22,18 +22,24 @@ var PlayerMenu = React.createClass({
 			var func = timeline[current]['func'];
 			var pause = that.get('pause');
 
-			console.log(func);
-
 			Q.queue(function(){
 				if(current === timeline.length || pause === true) {
 					return;
 				}
+
 				console.log('yes');
-				setTimeout(function() {
-					Q.queue(recurseQueue());
-					Q.dequeue();
-				},1000);
-				AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
+				var temp = {};
+		    temp[timeline[current]['property']] = timeline[current]['value'];
+				$(timeline[current]['selector']).animate(temp, 1000, function(){
+						Q.queue(recurseQueue());
+						Q.dequeue();
+						AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
+				});
+
+				// setTimeout(function() {
+				// 	Q.queue(recurseQueue());
+				// 	Q.dequeue();
+				// },1000);
 			});
 		}
 
