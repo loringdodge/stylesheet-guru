@@ -15,16 +15,10 @@ var NotFound = React.createClass({
 
   render: function() {
     return (
-      React.createElement('div', null,
-        React.createElement('h1', null, 'Page not found'),
-        React.createElement('h2', null, '404'),
-        React.createElement('ul', null,
-          React.createElement('li', null,
-            React.createElement(Navigate, {page: Pages.HOM}, 'Go to "home"')),
-          React.createElement('li', null,
-            React.createElement(Navigate, {page: Pages.HELLO_WORLD}, 'Go to "hello world"'))
-        )
-      )
+      <main>
+        <Header />
+        <h2 className="text-size-30px text-align-center">Not Found</h2>
+      </main>
     );
   }
 });
