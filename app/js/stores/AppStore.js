@@ -56,14 +56,6 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       appState.demo.pause = action.pause;
       break;
 
-    case ActionTypes.PLAYER_NEXT:
-      appState.demo.current = action.current;
-      break;
-
-    case ActionTypes.PLAYER_BACK:
-      appState.demo.current = action.current;
-      break;
-
     case ActionTypes.UPDATE_CODEPANEL_PARENT:
       appState.demo.codePanel.parentNode = action.codePanel.parentNode;
       appState.demo.codePanel.parentHeight = action.codePanel.parentHeight;
