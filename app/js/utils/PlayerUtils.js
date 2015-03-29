@@ -17,7 +17,7 @@ var PlayerUtils = {
         parentHeight: null,
         scrollSpeed: 1000,
         scrollPaddingTop: 40,
-        scrollPaddingBottom: 40,
+        scrollPaddingBottom: 65,
       },
       html: PlayerUtils.addClassesToElements(HTML.parse(obj.html), 'code-html-default')
     });

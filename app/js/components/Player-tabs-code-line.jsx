@@ -9,19 +9,24 @@ var PlayerTabsCodeLine = React.createClass({
   get: GetUtils,
 
   componentDidUpdate: function() {
-
     if(this.get('type') === 'property' && this.get('current') === this.get('index')){
       var childNode = React.findDOMNode(this);
-      var offsetHeight = childNode.offsetHeight;
-      var offsetTop = childNode.offsetTop;
-      var parentNode = this.get('codePanel').parentNode;
-      var parentHeight = this.get('codePanel').parentHeight;
+      var childHeight = childNode.offsetHeight;
+      var childTop = childNode.offsetTop;
 
-      if((offsetHeight + offsetTop + 40) > parentHeight){
-        $(parentNode).animate({ scrollTop: parentHeight }, 1000, 'easeInCirc');
+      var codePanel = this.get('codePanel');
+      var parentNode = codePanel.parentNode;
+      var parentHeight = codePanel.parentHeight;
+
+      var scrollSpeed = codePanel.scrollSpeed;
+      var scrollPaddingTop = codePanel.scrollPaddingTop;
+      var scrollPaddingBottom = codePanel.scrollPaddingBottom;
+
+      if((childHeight + childTop + scrollPaddingTop) > parentHeight){
+        $(parentNode).animate({ scrollTop: parentHeight }, scrollSpeed, 'easeInCirc');
       }
-      if((offsetTop) <= 65){
-        $(parentNode).animate({ scrollTop: offsetTop - 65 }, 1000, 'easeOutCirc');
+      if(childTop <= scrollPaddingBottom){
+        $(parentNode).animate({ scrollTop: childTop - scrollPaddingBottom }, scrollSpeed, 'easeOutCirc');
       }
     }
   },
