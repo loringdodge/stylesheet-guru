@@ -15,7 +15,9 @@ var PlayerUtils = {
       codePanel:{
         parentNode: {},
         parentHeight: null,
-        scrollPadding: 40
+        scrollSpeed: 1000,
+        scrollPaddingTop: 40,
+        scrollPaddingBottom: 40,
       },
       html: PlayerUtils.addClassesToElements(HTML.parse(obj.html), 'code-html-default')
     });

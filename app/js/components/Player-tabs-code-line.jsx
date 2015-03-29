@@ -10,41 +10,41 @@ var PlayerTabsCodeLine = React.createClass({
 
   componentDidUpdate: function() {
 
-    if(this.props.type === 'property' && this.props.current === this.props.index){
+    if(this.get('type') === 'property' && this.get('current') === this.get('index')){
       var childNode = React.findDOMNode(this);
       var offsetHeight = childNode.offsetHeight;
       var offsetTop = childNode.offsetTop;
-      var parentNode = this.props.codePanel.parentNode;
-      var parentHeight = this.props.codePanel.parentHeight;
+      var parentNode = this.get('codePanel').parentNode;
+      var parentHeight = this.get('codePanel').parentHeight;
 
       if((offsetHeight + offsetTop + 40) > parentHeight){
-        $(parentNode).animate({ scrollTop: parentHeight}, 1000, 'easeInCirc');
+        $(parentNode).animate({ scrollTop: parentHeight }, 1000, 'easeInCirc');
       }
       if((offsetTop) <= 65){
-        $(parentNode).animate({ scrollTop: offsetTop - 65}, 1000, 'easeOutCirc');
+        $(parentNode).animate({ scrollTop: offsetTop - 65 }, 1000, 'easeOutCirc');
       }
     }
   },
 
   handleClick: function() {
-    AppActions.updateCurrent(this.props.index);
+    AppActions.updateCurrent(this.get('index'));
   },
 
   render: function() {
-    switch(this.props.type) {
+    switch(this.get('type')) {
       case 'selector':
         return (
           <div className="code-block-row">
-            <div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
+            <div className="code-block-row-number" unselectable="on">{this.get('lineNumber')}</div>
             <div className="code-block-row-line">
-              <span className="selector">{this.props.selector}</span>
+              <span className="selector">{this.get('selector')}</span>
               <span className="syntax">&#123;</span>
             </div>
           </div>
         );
 
       case 'property':
-        var isHighlighted = this.props.current === this.props.index;
+        var isHighlighted = this.get('current') === this.get('index');
         var classes = ClassUtils({
           'code-block-row': true,
           'highlighted': isHighlighted,
@@ -52,11 +52,11 @@ var PlayerTabsCodeLine = React.createClass({
         });
         return (
           <div className={classes} onClick={this.handleClick}>
-            <div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
+            <div className="code-block-row-number" unselectable="on">{this.get('lineNumber')}</div>
             <div className="code-block-row-line">
-              <span className="property">{this.props.property}</span>
+              <span className="property">{this.get('property')}</span>
               <span className="syntax">&#58;</span>
-              <span className="value">{this.props.value}</span>
+              <span className="value">{this.get('value')}</span>
               <span className="syntax">&#59;</span>
             </div>
           </div>
@@ -65,7 +65,7 @@ var PlayerTabsCodeLine = React.createClass({
       case 'closing':
         return (
           <div className="code-block-row">
-            <div className="code-block-row-number" unselectable="on">{this.props.lineNumber}</div>
+            <div className="code-block-row-number" unselectable="on">{this.get('lineNumber')}</div>
             <div className="code-block-row-line">
               <span className="syntax">&#125;</span>
             </div>
