@@ -56,7 +56,9 @@ var PlayerUtils = {
   makeAnimationFunc : function(selector, property, value) {
     var temp = {};
     temp[property] = value;
-    return $(selector).animate(temp, 1000);
+    return function(){
+      $(selector).animate(temp, 1000);
+    }
   },
 
   makeCssFunc : function(selector, property, value) {
