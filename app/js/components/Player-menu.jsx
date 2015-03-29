@@ -18,7 +18,7 @@ var PlayerMenu = React.createClass({
 
     var recurseQueue = function() {
       var current = that.get('current');
-      var func = timeline[current]['func'];
+      var timelineObj = timeline[current]['func'];
       var pause = that.get('pause');
 
       Q.queue(function(){
@@ -27,8 +27,8 @@ var PlayerMenu = React.createClass({
         }
 
         var temp = {};
-        temp[timeline[current]['property']] = timeline[current]['value'];
-        $(timeline[current]['selector']).animate(temp, {
+        temp[timelineObj['property']] = timelineObj['value'];
+        $(timelineObj['selector']).animate(temp, {
           duration: 1000,
           complete: function(){
             Q.queue(recurseQueue());
