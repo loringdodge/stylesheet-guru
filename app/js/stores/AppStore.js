@@ -42,18 +42,13 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       appState.search = action.search;
       break;
 
+    case ActionTypes.UPDATE_Q:
+      appState.demo.q = action.q;
+      appState.demo.pause = action.pause;
+      break;
+
     case ActionTypes.UPDATE_CURRENT:
       appState.demo.current = action.current;
-      break;
-
-    case ActionTypes.PLAYER_PLAY:
-      appState.demo.q = action.q;
-      appState.demo.pause = action.pause;
-      break;
-
-    case ActionTypes.PLAYER_PAUSE:
-      appState.demo.q = action.q;
-      appState.demo.pause = action.pause;
       break;
 
     case ActionTypes.UPDATE_CODEPANEL_PARENT:

@@ -8,7 +8,6 @@ var PlayerMenu = React.createClass({
   get: GetUtils,
 
   play: function() {
-    console.log('play');
     var demo = this.get('demo');
     var Q = this.get('q') || PlayerUtils.makeQueue();
     var timeline = this.get('timeline');
@@ -27,7 +26,6 @@ var PlayerMenu = React.createClass({
           return;
         }
 
-        console.log('yes');
         var temp = {};
         temp[timeline[current]['property']] = timeline[current]['value'];
         $(timeline[current]['selector']).animate(temp, {
@@ -49,14 +47,12 @@ var PlayerMenu = React.createClass({
   },
 
   pause: function() {
-    console.log('pause');
     var Q = this.get('q');
     if(Q !== null) Q.stop();
     AppActions.updateQ(Q, true);
   },
 
   next: function() {
-    console.log('next');
     this.pause();
     var current = this.get('current');
     var timeline = this.get('timeline');
@@ -64,7 +60,6 @@ var PlayerMenu = React.createClass({
   },
 
   back: function() {
-    console.log('back');
     this.pause();
     var current = this.get('current');
     if(current > 0) AppActions.updateCurrent(PlayerUtils.decreaseCurrent(current));
