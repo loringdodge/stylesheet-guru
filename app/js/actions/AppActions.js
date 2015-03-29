@@ -64,18 +64,9 @@ var AppActions = {
       });
   },
 
-  triggerPlay: function(q, pause) {
+  updateQ: function(q, pause) {
     var action = {
-      type: ActionTypes.PLAYER_PLAY,
-      q: q,
-      pause: pause
-    };
-    AppDispatcher.handleViewAction(action);
-  },
-
-  triggerPause: function(q, pause) {
-    var action = {
-      type: ActionTypes.PLAYER_PAUSE,
+      type: ActionTypes.UPDATE_Q,
       q: q,
       pause: pause
     };

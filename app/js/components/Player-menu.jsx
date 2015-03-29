@@ -13,7 +13,7 @@ var PlayerMenu = React.createClass({
     var Q = this.get('q') || PlayerUtils.makeQueue();
     var timeline = this.get('timeline');
 
-    AppActions.triggerPlay(Q, false);
+    AppActions.updateQ(Q, false);
 
     var that = this;
 
@@ -52,7 +52,7 @@ var PlayerMenu = React.createClass({
     console.log('pause');
     var Q = this.get('q');
     if(Q !== null) Q.stop();
-    AppActions.triggerPause(Q, true);
+    AppActions.updateQ(Q, true);
   },
 
   next: function() {

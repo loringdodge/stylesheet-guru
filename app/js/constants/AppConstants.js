@@ -7,9 +7,8 @@ module.exports = {
     APP_RESET: null,
     SWITCH_PAGE: null,
     GET_SEARCH: null,
-    SET_CURRENT: null,
-    PLAYER_PLAY: null,
-    PLAYER_PAUSE: null,
+    UPDATE_CURRENT: null,
+    UPDATE_Q: null,
     UPDATE_CODEPANEL_PARENT: null
   }),
 
