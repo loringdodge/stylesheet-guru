@@ -35,10 +35,10 @@ var PlayerMenu = React.createClass({
           complete: function(){
             Q.queue(recurseQueue());
             Q.dequeue();
-            AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
+            AppActions.updateCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
           },
           fail: function(){
-            AppActions.setCurrent(PlayerUtils.decreaseCurrent(current));
+            AppActions.updateCurrent(PlayerUtils.decreaseCurrent(current));
           }
         });
       });
@@ -60,14 +60,14 @@ var PlayerMenu = React.createClass({
     this.pause();
     var current = this.get('current');
     var timeline = this.get('timeline');
-    if(current < timeline.length) AppActions.setCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
+    if(current < timeline.length) AppActions.updateCurrent(PlayerUtils.increaseCurrent(current, timeline.length));
   },
 
   back: function() {
     console.log('back');
     this.pause();
     var current = this.get('current');
-    if(current > 0) AppActions.setCurrent(PlayerUtils.decreaseCurrent(current));
+    if(current > 0) AppActions.updateCurrent(PlayerUtils.decreaseCurrent(current));
   },
 
   render: function() {

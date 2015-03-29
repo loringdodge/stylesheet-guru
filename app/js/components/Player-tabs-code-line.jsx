@@ -27,7 +27,7 @@ var PlayerTabsCodeLine = React.createClass({
   },
 
   handleClick: function() {
-    AppActions.setCurrent(this.props.index);
+    AppActions.updateCurrent(this.props.index);
   },
 
   render: function() {

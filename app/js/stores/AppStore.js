@@ -42,7 +42,7 @@ AppStore.dispatchToken = AppDispatcher.register(function(payload) {
       appState.search = action.search;
       break;
 
-    case ActionTypes.SET_CURRENT:
+    case ActionTypes.UPDATE_CURRENT:
       appState.demo.current = action.current;
       break;
 

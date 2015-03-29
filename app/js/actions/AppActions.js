@@ -82,9 +82,9 @@ var AppActions = {
     AppDispatcher.handleViewAction(action);
   },
 
-  setCurrent: function(current){
+  updateCurrent: function(current){
     var action = {
-      type: ActionTypes.SET_CURRENT,
+      type: ActionTypes.UPDATE_CURRENT,
       current : current
     };
     AppDispatcher.handleViewAction(action);
