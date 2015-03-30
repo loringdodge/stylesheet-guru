@@ -559,7 +559,6 @@ section#player .player-tabs .player-tabs-windows .player-tabs-window-container {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 15px;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -589,6 +588,9 @@ section#player .player-tabs .player-tabs-windows .player-tabs-window-container .
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+section#player .player-tabs.demo .player-tabs-window-container {
+  padding: 15px;
 }
 section#search {
   float: left;

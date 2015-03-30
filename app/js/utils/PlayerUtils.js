@@ -79,8 +79,6 @@ var PlayerUtils = {
     })
   },
 
-  isPseudoElement
-
 }
 
 module.exports = PlayerUtils;
