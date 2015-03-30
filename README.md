@@ -1,7 +1,7 @@
 stylesheet.guru
 ==================================
 
-A CSS visualizer that allows users to see how CSS properties are applied to DOM elements using animations.
+A CSS visualizer that allows users to see how CSS properties are applied to DOM elements using animations. In this way, users may gain a different perspective and understanding of CSS properties and their values. 
 
 How it works
 -------------
