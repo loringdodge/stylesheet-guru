@@ -20,7 +20,7 @@ What can the user do?
 - **Back** - moves one step backward in the timeline
 - **Click To Property** - changes the timeline back to the point of the property that was clicked (in progress)
 - **Tabs** - changes the views to allow the user to see either the CSS or HTML related to the animation (in progress)
-- **Search Demos** - performs a keyword query to the database for available demos
+- **Search Demos** - searches the database of available demos based on a keyword
 
 What tech is used?
 -------------
