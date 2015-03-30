@@ -12,6 +12,7 @@
     "gulp-stylus": "^2.0.1",
     "html-parse-stringify": "^1.0.2",
     "htmlescape": "1.0.0",
+    "jest": "^0.1.39",
     "jquery": "^2.1.3",
     "lodash": "^3.5.0",
     "morgan": "1.4.1",
@@ -32,7 +33,8 @@
     "build-js": "mkdir -p public && browserify app/js/main.js --standalone Application --debug --outfile public/main.js",
     "build": "npm run build-js && npm run build-css",
     "start": "node server",
-    "web": "npm run build && npm start"
+    "web": "npm run build && npm start",
+    "test": "jest"
   },
   "browserify": {
     "transform": [
