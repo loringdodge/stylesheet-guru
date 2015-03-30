@@ -17,10 +17,10 @@ The user has control over the animation queue and has the options to 'pause', ta
 What tech is used?
 -------------
 Front-End - [React/Flux](https://facebook.github.io/react/)
-Back-End - Node.js
+Back-End - Node/Express
 Database - [RethinkDB](http://rethinkdb.com)
 
-The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by 
+The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by [zergtosh](https://github.com/zertosh).
 
 Todo list
 -------------
