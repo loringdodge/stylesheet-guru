@@ -35,7 +35,7 @@ Pages are served using Node/Express and content is pulled from a RethinkDB datab
 
 What needs to be done?
 -------------
-- Determine the most optimal way generate the animation queue. It currently makes use of jQuery.queue() which is optimized for animations and provides a stop() method to stop an animation in progress.
+- Determine the most optimal way generate the animation queue. It currently makes use of jQuery.queue() which is optimized for animations and provides a stop() method to stop an animation in progress. Additionally, the queue ensures that the next animation in the queue will only be fired after successful completion of the previous using a callback function.
 
 - Determine the most efficient way to apply pseudo elements. These are not part of the DOM tree and cannot be selected using any library. Pseudo elements must also be applied on page load or else they are not registered.
   - (Option 1) Reorganize HTML structure on DOM load to insert child div for any :after or :before selectors.
