@@ -1,11 +1,9 @@
 stylesheet.guru
 ==================================
-
 A CSS visualizer that allows users to see how CSS properties are applied to DOM elements using animations. In this way, users may gain a different perspective and understanding of CSS properties and their values. 
 
 How it works?
 -------------
-
 When a user clicks on the 'play' button, an animation timeline is triggered that applied CSS properties to the specified DOM element in sequential order.
 
 ![On Demo Load](/screenshots/screenshot1.png?raw=true)
@@ -16,7 +14,6 @@ The user has control over the animation queue and has the options to 'pause', ta
 
 What can the user do?
 -------------
-
 - **Play** - starts the animation timeline
 - **Pause** - pauses the animation timeline
 - **Next** - moves one step forward in the timeline
@@ -47,7 +44,6 @@ What needs to be done?
 
 What features are in the future?
 -------------
-
 - **Fullscreen Mode** - Allow the user enlarge the player to fullscreen.
 - **Tooltip** - Give the users to hover over a property or value and see what it does in a tooltip.
 - **Warning Box** - Let users know why a property wasn't animated. Some properties can and some can't. 
@@ -55,3 +51,7 @@ What features are in the future?
 Contributing
 -------------
 Loring Dodge - [GitHub](http://github.com/loringdodge/) | [Personal](http://www.loringdodge.com)
+
+Deployment
+-------------
+Coming soon!
