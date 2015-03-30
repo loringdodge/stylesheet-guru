@@ -79,6 +79,14 @@ var PlayerUtils = {
     })
   },
 
+  isPseudoElement : function(property){
+    return PseudoElements.hasOwnProperty(property);
+  },
+
+  isValidProperty : function(property){
+    return Properties.hasOwnProperty(property);
+  }
+
 }
 
 module.exports = PlayerUtils;
