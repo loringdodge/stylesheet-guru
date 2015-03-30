@@ -23,7 +23,6 @@ var PlayerUtils = {
     });
   },
 
-  // PlayerUtils.addClassesToElements(HTML.parse(obj.html))
   makeTimeline : function(cssObj){
     var timeline = [];
     var index = 0;
@@ -60,14 +59,6 @@ var PlayerUtils = {
     temp[property] = value;
     return function(){
       $(selector).animate(temp, 1000);
-    }
-  },
-
-  makeCssFunc : function(selector, property, value) {
-    var temp = {};
-    temp[property] = value;
-    return function(){
-      $(selector).css(temp);
     }
   },
 
