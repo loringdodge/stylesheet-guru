@@ -32,7 +32,17 @@ var PlayerTabsCodeLine = React.createClass({
   },
 
   handleClick: function() {
-    AppActions.updateCurrent(this.get('index'));
+    var index = this.get('index');
+    // var current = this.get('current');
+    // var selector = this.get('selector');
+    // var timeline = this.get('timeline');
+    // var state = timeline[current]['state'];
+
+    // console.log(selector, state)
+
+    AppActions.updateCurrent(index);
+
+    // $(selector).css(state);
   },
 
   render: function() {

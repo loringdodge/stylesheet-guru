@@ -20,6 +20,7 @@ var PlayerTabsCode = React.createClass({
     var lineNumber = 1;
     var index = -1;
     var current = this.get('current');
+    var timeline = this.get('timeline');
     return (
       <div className="player-tabs code">
         <ul className="player-tabs-nav">
@@ -36,7 +37,7 @@ var PlayerTabsCode = React.createClass({
                       { _.map(css.properties, function(value, property) {
                         index++;
                         return (
-                          <PlayerTabsCodeLine current={current} index={index} codePanel={codePanel} type={'property'} property={property} value={value} lineNumber={lineNumber++} />
+                          <PlayerTabsCodeLine current={current} index={index} selector={css.selector} timeline={timeline} codePanel={codePanel} type={'property'} property={property} value={value} lineNumber={lineNumber++} />
                         );
                       }, this) }
                       <PlayerTabsCodeLine type={'closing'} lineNumber={lineNumber++} />
