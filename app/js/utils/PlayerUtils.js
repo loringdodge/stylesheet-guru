@@ -26,17 +26,14 @@ var PlayerUtils = {
 
   makeTimeline : function(cssObj){
     var timeline = [];
-    var state = {};
     var index = 0;
     _.each(cssObj, function(item){
       _.each(item.properties, function(value, property){
-        state[property] = value;
         var temp = {
           id: index,
           selector: item.selector,
           property: property,
-          value: value,
-          state: state
+          value: value
         };
         timeline.push(temp);
         index++;
