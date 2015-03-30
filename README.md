@@ -29,9 +29,9 @@ What tech is used?
 - Back-End - Node/Express
 - Database - [RethinkDB](http://rethinkdb.com)
 
-The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by [zergtosh](https://github.com/zertosh).
-
 Pages are served using Node/Express and content is pulled from a RethinkDB database based on a received pathname. The initial state of the application is registered to the Store and dissiminated to the Components. The animation player is a queue that fires the next upon successful completion via a callback and an Action is fired to update the current index. The Action is registered with the Dispatcher which then sends it's payload to the Store to update the current index with the Store.
+
+The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by [zergtosh](https://github.com/zertosh).
 
 What needs to be done?
 -------------
