@@ -14,6 +14,6 @@ The user has control over the animation queue and has the options to 'pause', ta
 
 ![In Progress](/screenshots/screenshot2.png?raw=true)
 
-Contributor
+Contributing
 -------------
-[Loring Dodge](http://github.com/loringdodge/)
+Loring Dodge - [GitHub](http://github.com/loringdodge/) | [Personal](http://www.loringdodge.com)
