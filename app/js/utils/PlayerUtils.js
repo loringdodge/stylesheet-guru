@@ -3,6 +3,7 @@ var _ = require('underscore');
 var HTML = require('html-parse-stringify');
 
 var Properties = require('../Player/Properties');
+var PseudoElements = require('../Player/PseudoElements');
 
 var PlayerUtils = {
 
@@ -76,8 +77,9 @@ var PlayerUtils = {
       element.attrs.class = PlayerUtils.addClassesToString(element.attrs.class, classes);
       return element;
     })
+  },
 
-  }
+  isPseudoElement
 
 }
 
