@@ -34,6 +34,8 @@ What tech is used?
 
 The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by [zergtosh](https://github.com/zertosh).
 
+Pages are served using Node/Express and content is pulled from a RethinkDB database based on the received pathname. The initial state of the application is registered to the store and dissiminated to the React components
+
 What needs to be done?
 -------------
 - Determine the most optimal way generate the animation queue. It currently makes use of jQuery.queue() which is optimized for animations and provides a stop() method to stop an animation in progress.
@@ -42,7 +44,6 @@ What needs to be done?
   - (Option 1) Reorganize HTML structure on DOM load to insert child div for any :after or :before selectors.
   - (Option 2: Better) Prio to serving page, break each CSS property into a different class in a seperate stylesheet, server the stylesheet, and apply each class to the DOM element when the timeline is triggered.
 
-- 
 
 What features are in the future?
 -------------
