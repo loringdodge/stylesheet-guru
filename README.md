@@ -27,15 +27,29 @@ What can the user do?
 
 What tech is used?
 -------------
-Front-End - [React/Flux](https://facebook.github.io/react/)
-Back-End - Node/Express
-Database - [RethinkDB](http://rethinkdb.com)
+- Front-End - [React/Flux](https://facebook.github.io/react/)
+- Animation Library - jquery
+- Back-End - Node/Express
+- Database - [RethinkDB](http://rethinkdb.com)
 
 The front-end architecture is built off React/Flux and served from the server using the Server Side Rendering ([ssr-demo-kit](https://github.com/zertosh/ssr-demo-kit)) technique created by [zergtosh](https://github.com/zertosh).
 
-Todo list
+What needs to be done?
 -------------
-* 
+- Determine the most optimal way generate the animation queue. It currently makes use of jQuery.queue() which is optimized for animations and provides a stop() method to stop an animation in progress.
+
+- Determine the most efficient way to apply pseudo elements. These are not part of the DOM tree and cannot be selected using any library. Pseudo elements must also be applied on page load or else they are not registered.
+  - (Option 1) Reorganize HTML structure on DOM load to insert child div for any :after or :before selectors.
+  - (Option 2: Better) Prio to serving page, break each CSS property into a different class in a seperate stylesheet, server the stylesheet, and apply each class to the DOM element when the timeline is triggered.
+
+- 
+
+What features are in the future?
+-------------
+
+- **Fullscreen Mode** - Allow the user enlarge the player to fullscreen.
+- **Tooltip** - Give the users to hover over a property or value and see what it does in a tooltip.
+- **Warning Box** - Let users know why a property wasn't animated. Some properties can and some can't. 
 
 Contributing
 -------------
