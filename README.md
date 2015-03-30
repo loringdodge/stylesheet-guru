@@ -14,6 +14,17 @@ The user has control over the animation queue and has the options to 'pause', ta
 
 ![In Progress](/screenshots/screenshot2.png?raw=true)
 
+What can the user do?
+-------------
+
+- **Play** - starts the animation timeline
+- **Pause** - pauses the animation timeline
+- **Next** - moves one step forward in the timeline
+- **Back** - moves one step backward in the timeline
+- **Click To Property** - changes the timeline back to the point of the property that was clicked
+- **Tabs** - changes the views to allow the user to see either the CSS or HTML related to the animation (in progress)
+- **Search Demos** - performs a keyword query to the database for available demos
+
 What tech is used?
 -------------
 Front-End - [React/Flux](https://facebook.github.io/react/)
