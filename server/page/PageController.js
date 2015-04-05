@@ -12,11 +12,11 @@ var LayoutConfig = ServerConstants.LayoutConfig;
 
 var layout = _.template(fs.readFileSync(Config.LAYOUT_FILE, 'utf8'));
 
-////////// Demo Router //////////
-var DemoRouter = {
+////////// Page Router //////////
+var PageRouter = {
 
   // Verifies url & sends layout.tmpl
-  initializeDemo: function(req, res) {
+  initializePage: function(req, res) {
     var url = req.params.url;
 
     RethinkUtils.findDemoByPath(url)
@@ -61,4 +61,4 @@ var DemoRouter = {
 
 }
 
-module.exports = DemoRouter;
+module.exports = PageRouter;

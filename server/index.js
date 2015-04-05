@@ -8,7 +8,7 @@ var express = require('express');
 var morgan = require('morgan');
 
 var ApiRouter = require('./api/ApiRouter');
-var DemoRouter = require('./demo/DemoRouter');
+var PageRouter = require('./page/PageRouter');
 
 var ServerConstants = require('./constants/ServerConstants');
 var Config = ServerConstants.Config;
@@ -22,7 +22,7 @@ var r = require('./db/RethinkConnect');
 server.use(morgan('dev'));
 server.use('/', express.static(Config.PUBLIC_DIR));
 
-server.use('/', DemoRouter);
+server.use('/', PageRouter);
 server.use('/api', ApiRouter);
 
 server.listen(Config.PORT);
