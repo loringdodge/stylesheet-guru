@@ -23,5 +23,12 @@ module.exports = {
     rootComponentHTML: '',
     // Keep in sync with `app/constants/AppConstants.js`
     ROOT_ELEMENT_ID: 'ReactRootElement'
+  },
+
+  Database: {
+    host: 'localhost',
+    port: 28015,
+    db  : 'guru'
   }
+
 };

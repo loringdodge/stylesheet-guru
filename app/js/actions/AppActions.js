@@ -14,10 +14,8 @@ var AppActions = {
     if (!bootstrap) bootstrap = {};
     var path = RouteUtils.getBestAvailablePath(bootstrap.path);
     var page = RouteUtils.getPage(path);
-    var demo = PlayerUtils.extendDemoState(bootstrap.demo);
     bootstrap.path = path;
     bootstrap.page = page;
-    bootstrap.demo = demo;
     var action = {
       type: ActionTypes.APP_INITIALIZE,
     };

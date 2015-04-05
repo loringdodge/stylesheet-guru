@@ -1,19 +1,14 @@
 var r = require('rethinkdb');
 
-////////// DB Config //////////
-var dbConfig = {
-  host: 'localhost',
-  port: 28015,
-  db  : 'guru'
-};
+var ServerConstants = require('../constants/ServerConstants');
+var Database = ServerConstants.Database;
 
 ////////// Connect to RethinkDB //////////
 r.connections = [];
 
-r.connect(dbConfig)
+r.connect(Database)
   .then(function(connection){
     r.connection = connection;
-    r.connection.use(dbConfig.db);
     console.log("[INFO] RethinkDB: Connected successfully");
     return r;
   })
