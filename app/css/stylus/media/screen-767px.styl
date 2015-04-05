@@ -1,8 +1,25 @@
-// ********** Screens below 480px width **********
+// ********** Screens below 767px width **********
 @media only screen and (max-width: 768px)
 
   body
-    max-width 712px
+    max-width 768px
 
   .player-menu
-    min-width 100%;
+    min-width 100%
+
+  .player-tabs
+    float left
+
+    &.code
+      width 50% !important
+
+    &.demo
+      width 50% !important
+
+  .search-result-box
+    width 200px !important
+    min-width calc(50% - 20px)
+
+    .search-result-box-img
+      float left
+      max-width 100%

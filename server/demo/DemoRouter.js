@@ -3,6 +3,7 @@ var DemoController = require('./DemoController');
 
 var DemoRouter = express.Router();
 
-DemoRouter.get('/:url', DemoController.initializeDemo);
+DemoRouter.get('/', DemoController.initializeDemo);
+DemoRouter.get('/demo/:url', DemoController.initializeDemo);
 
 module.exports = DemoRouter;

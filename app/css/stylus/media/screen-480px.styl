@@ -2,7 +2,7 @@
 @media only screen and (max-width: 480px)
 
   body
-    max-width 436px
+    max-width 480px
 
   .player-header-title
     margin 0 10px 0 15px
@@ -12,21 +12,24 @@
     margin 0
     line-height 40px
 
-  .player-menu
-    float none
-    min-width 100%
-
   .player-tabs
     float left
 
     &.code
-      min-width 100%
+      display none
 
     &.demo
       min-width 100%
 
   .search-result-box
-    min-width calc(100% - 40px)
+    margin-bottom 10px !important
+    min-width 100%
+    height 100px
 
     .search-result-box-img
-      min-width 100%
+      width 100px
+      height 100px
+
+    .search-result-box-overlay
+      max-width calc(100% - 100px)
+      min-height 100%

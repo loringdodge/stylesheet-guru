@@ -456,7 +456,6 @@ main {
   height: 100%;
 }
 section#player {
-  float: left;
   width: 100%;
   height: calc(100% - 40px);
 }
@@ -478,7 +477,7 @@ section#player .player-header .player-header-desc {
 }
 section#player .player-menu {
   float: left;
-  width: 25%;
+  width: 35%;
   height: 40px;
 }
 section#player .player-menu .btn {
@@ -543,7 +542,7 @@ section#player .player-tabs .player-tabs-windows {
   position: relative;
   float: left;
   width: 100%;
-  height: calc(100% - 75px);
+  height: calc(100% - 50px);
   border-right: 1px solid #e6e6e6;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -593,7 +592,6 @@ section#player .player-tabs.demo .player-tabs-window-container {
   padding: 15px;
 }
 section#search {
-  float: left;
   min-width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -631,7 +629,7 @@ section#search .search-results-container {
 section#search .search-results-container .search-result-box {
   float: left;
   margin: 0px 20px 20px 0px;
-  width: 250px;
+  width: 300px;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -650,7 +648,7 @@ section#search .search-results-container .search-result-box:hover h4 {
 }
 section#search .search-results-container .search-result-box .search-result-box-img {
   float: left;
-  max-width: 250px;
+  max-width: 100%;
 }
 section#search .search-results-container .search-result-box .search-result-box-overlay {
   float: left;
@@ -667,15 +665,32 @@ section#search .search-results-container .search-result-box .search-result-box-o
 }
 @media only screen and (max-width: 768px) {
   body {
-    max-width: 712px;
+    max-width: 768px;
   }
   .player-menu {
     min-width: 100%;
   }
+  .player-tabs {
+    float: left;
+  }
+  .player-tabs.code {
+    width: 50% !important;
+  }
+  .player-tabs.demo {
+    width: 50% !important;
+  }
+  .search-result-box {
+    width: 200px !important;
+    min-width: calc(50% - 20px);
+  }
+  .search-result-box .search-result-box-img {
+    float: left;
+    max-width: 100%;
+  }
 }
 @media only screen and (max-width: 480px) {
   body {
-    max-width: 436px;
+    max-width: 480px;
   }
   .player-header-title {
     margin: 0 10px 0 15px;
@@ -685,23 +700,26 @@ section#search .search-results-container .search-result-box .search-result-box-o
     margin: 0;
     line-height: 40px;
   }
-  .player-menu {
-    float: none;
-    min-width: 100%;
-  }
   .player-tabs {
     float: left;
   }
   .player-tabs.code {
-    min-width: 100%;
+    display: none;
   }
   .player-tabs.demo {
     min-width: 100%;
   }
   .search-result-box {
-    min-width: calc(100% - 40px);
+    margin-bottom: 10px !important;
+    min-width: 100%;
+    height: 100px;
   }
   .search-result-box .search-result-box-img {
-    min-width: 100%;
+    width: 100px;
+    height: 100px;
+  }
+  .search-result-box .search-result-box-overlay {
+    max-width: calc(100% - 100px);
+    min-height: 100%;
   }
 }

@@ -22,9 +22,8 @@ var r = require('./db/RethinkConnect');
 server.use(morgan('dev'));
 server.use('/', express.static(Config.PUBLIC_DIR));
 
+server.use('/', DemoRouter);
 server.use('/api', ApiRouter);
-
-server.use('/demo', DemoRouter);
 
 server.listen(Config.PORT);
 
