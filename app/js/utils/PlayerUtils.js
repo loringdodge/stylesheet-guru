@@ -3,7 +3,7 @@ var _ = require('underscore');
 var HTML = require('html-parse-stringify');
 
 // var Properties = require('../Player/Properties');
-var PseudoElements = require('../Player/PseudoElements');
+// var PseudoElements = require('../Player/PseudoElements');
 
 var PlayerUtils = {
 
@@ -76,13 +76,13 @@ var PlayerUtils = {
     })
   },
 
-  isPseudoElement : function(property){
-    return PseudoElements.hasOwnProperty(property);
-  },
+  // isPseudoElement : function(property){
+  //   return PseudoElements.hasOwnProperty(property);
+  // },
 
-  isValidProperty : function(property){
-    return Properties.hasOwnProperty(property);
-  }
+  // isValidProperty : function(property){
+  //   return Properties.hasOwnProperty(property);
+  // }
 
 }
 
