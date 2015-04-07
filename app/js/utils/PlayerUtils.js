@@ -2,8 +2,8 @@ var $ = require('jquery');
 var _ = require('underscore');
 var HTML = require('html-parse-stringify');
 
-var Properties = require('../Player/Properties');
-var PseudoElements = require('../Player/PseudoElements');
+// var Properties = require('../Player/Properties');
+// var PseudoElements = require('../Player/PseudoElements');
 
 var PlayerUtils = {
 
