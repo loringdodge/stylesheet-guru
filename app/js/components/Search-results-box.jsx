@@ -16,7 +16,7 @@ var SearchResultsBox = React.createClass({
   render: function() {
     return (
           <Navigate page={Pages.DEMO} path={'/demo/' + this.props.searchDemo.url} className="search-result-box background-color-white border-radius-5px border-bottom-red">
-            <img className="search-result-box-img" src={this.props.searchDemo.image}/>
+            <img className="search-result-box-img" src="/img/cover/" + {this.props.searchDemo.image}/>
             <div className="search-result-box-overlay background-color-grey-light">
               <h3 className="">{this.props.searchDemo.title}</h3>
               <h4 className="text-color-grey-mid">{this.props.searchDemo.keywords}</h4>
